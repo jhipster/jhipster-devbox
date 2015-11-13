@@ -43,10 +43,10 @@ Start up the new box:
 - Configure your IDE
   - Spring Tool Suite is installed in your `/home/vagrant/applications` directory
 - Configure you browser
-  - Firefox is installed by default with Ubuntu
-  - Chromium, which is the Open-Source version of Google Chrome, is also available
+  - Firefox is installed
+  - Chromium, which is the Open-Source version of Google Chrome, is also installed
 - Generate your application
   - Run `yo jhipster` and use JHipster normally
 - Use the JHipster tools
-  - Running `mvn` will run your JHipster application on port `8080` is forwarded to your host, you can also use `http://localhost:8080` on your host machine
+  - Running `mvn` will run your JHipster application on port `8080`. As this port is forwarded to your host, you can also use `http://localhost:8080` on your host machine
   - Running `grunt` will launch your AngularJS front-end with BrowserSync on port `3000`: it is also forwarded to your host, so you can also use `http://localhost3000` on your host machine
