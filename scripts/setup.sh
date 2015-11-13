@@ -37,6 +37,9 @@ sudo echo oracle-java-installer shared/accepted-oracle-license-v1-1 select true 
 sudo apt-get install -y --force-yes oracle-java${JAVA_VERSION}-installer
 sudo  update-java-alternatives -s java-8-oracle
 
+# install maven
+sudo curl -fsSL http://archive.apache.org/dist/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz | sudo tar xzf - -C /usr/share && sudo mv /usr/share/apache-maven-3.3.3 /usr/share/maven && sudo ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+
 # install node.js
 sudo curl -sL https://deb.nodesource.com/setup_4.x | sudo bash -
 sudo apt-get install -y nodejs unzip python g++ build-essential
@@ -65,6 +68,7 @@ sudo echo 'allowed_users=anybody' > /etc/X11/Xwrapper.config
 
 # install Ubuntu desktop and VirtualBox guest tools
 sudo apt-get install -y ubuntu-desktop virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11
+sudo apt-get install gnome-session-flashback
 
 ################################################################################
 # Install the development tools
@@ -79,6 +83,6 @@ cd /home/vagrant/applications && sudo tar -zxvf spring-tool-suite-3.7.1.RELEASE-
 sudo apt-get install -y chromium-browser
 
 # install MySQL
-#sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
-#sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
-#sudo apt-get install -y mysql-server mysql-workbench
+sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
+sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
+sudo apt-get install -y mysql-server mysql-workbench
