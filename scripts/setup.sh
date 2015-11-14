@@ -68,7 +68,7 @@ sudo echo 'allowed_users=anybody' > /etc/X11/Xwrapper.config
 
 # install Ubuntu desktop and VirtualBox guest tools
 sudo apt-get install -y ubuntu-desktop virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11
-sudo apt-get install gnome-session-flashback
+sudo apt-get install -y gnome-session-flashback
 
 ################################################################################
 # Install the development tools
