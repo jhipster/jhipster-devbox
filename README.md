@@ -55,3 +55,21 @@ Start up the new box:
 - Use the JHipster tools
   - Running `mvn` will run your JHipster application on port `8080`. As this port is forwarded to your host, you can also use `http://localhost:8080` on your host machine
   - Running `grunt` will launch your AngularJS front-end with BrowserSync on port `3000`: it is also forwarded to your host, so you can also use `http://localhost3000` on your host machine
+
+## TODO
+
+- MySQL isn't installed, there is some error in the current script
+- Install Postgresql
+- Add Heroku toolbelt, for deploying to the cloud
+- Add icons on the Desktop for Spring Tool Suite
+- Pre-fetch the Maven repository
+  - easiest solution is to get the sample app and run `mvn`
+  - can we use https://github.com/jhipster/jhipster-travis-build ?
+- Add more development tooling: Atom editor, Source Tree
+
+## Roadmap
+
+- Support NoSQL databases like Cassandra, MongoDB
+- Support Elasticsearch
+- Support for LibSass
+- Support CloudFoundry
