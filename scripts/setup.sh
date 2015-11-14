@@ -74,10 +74,20 @@ sudo apt-get install -y gnome-session-flashback
 # Install the development tools
 ################################################################################
 
-# install Eclipse
-sudo mkdir /home/vagrant/applications
-cd /home/vagrant/applications && sudo wget  http://dist.springsource.com/release/STS/3.7.1.RELEASE/dist/e4.5/spring-tool-suite-3.7.1.RELEASE-e4.5.1-linux-gtk-x86_64.tar.gz
-cd /home/vagrant/applications && sudo tar -zxvf spring-tool-suite-3.7.1.RELEASE-e4.5.1-linux-gtk-x86_64.tar.gz
+# install Spring Tool Suite
+export STS_VERSION='3.7.1.RELEASE'
+
+cd /opt && wget  http://dist.springsource.com/release/STS/${STS_VERSION}/dist/e4.5/spring-tool-suite-${STS_VERSION}-e4.5.1-linux-gtk-x86_64.tar.gz
+cd /opt && tar -zxvf spring-tool-suite-${STS_VERSION}-e4.5.1-linux-gtk-x86_64.tar.gz
+sudo chown -R vagrant:vagrant /opt
+cd /home/vagrant
+
+# install Atom
+export ATOM_VERSION='v1.2.0'
+
+wget https://github.com/atom/atom/releases/download/${ATOM_VERSION}/atom-amd64.deb atom-amd64.deb
+sudo dpkg -i atom-amd64.deb
+rm -f atom-amd64.deb
 
 # install Chromium Browser
 sudo apt-get install -y chromium-browser
@@ -90,3 +100,8 @@ sudo apt-get install -y mysql-server mysql-workbench
 
 # install Heroku toolbelt
 sudo wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+
+# create shortcuts
+sudo mkdir /home/vagrant/Desktop
+ln -s /opt/sts-bundle/sts-${STS_VERSION}/STS /home/vagrant/Desktop/STS
+sudo chown -R vagrant:vagrant /home/vagrant
