@@ -82,7 +82,11 @@ cd /home/vagrant/applications && sudo tar -zxvf spring-tool-suite-3.7.1.RELEASE-
 # install Chromium Browser
 sudo apt-get install -y chromium-browser
 
-# install MySQL
+# install MySQL with default passwoard as 'root'
+export DEBIAN_FRONTEND=noninteractive
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
 sudo apt-get install -y mysql-server mysql-workbench
+
+# install Heroku toolbelt
+sudo wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
