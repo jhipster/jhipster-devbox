@@ -31,13 +31,18 @@ Modify your system properties, depending on your host's hardware, we recommend:
 
 Start up the new box:
 
-- Login using the `vagrant` user
+- Login using the `vagrant` user (not the 'Ubuntu' user which is selected by default)
   - Password is `vagrant`, be careful the default keymap is QWERTY!
-  - Before logging in, click on the Gnome foot to select the Window environment you want to use
+  - Before logging in, click on the Ubuntu logo to select the Window environment you want to use
     - We recommend you use `GNOME Flashback (Metacity)`, as it doesn't use 3D effects and will be a lot faster on VirtualBox
-  - If you are not using an English keyboard, once you have logged in:
+- Configure your keyboard, if you are not using an English keyboard, once you have logged in:
+    - If you chose `GNOME Flashback (Metacity)`:
+      - Go to `Applications > System Tools > System Settings`
+      - Select `Text Entry`
+      - Use the `+` sign to add your keyboard layout
+    - If you kept the default Ubuntu desktop:
       - Click the "EN" icon on the top right of your screen
-      - Select "Text Entry Settings..."
+      - Select `Text Entry Settings...``
       - Use the `+` sign to add your keyboard layout
       - Then select your new keymap by clicking on the "EN" icon again
 - Configure your IDE
