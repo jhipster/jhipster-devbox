@@ -59,7 +59,6 @@ Start up the new box:
 ## TODO
 
 - MySQL isn't installed, there is some error in the current script
-- Install Postgresql
 - Add Heroku toolbelt, for deploying to the cloud
 - Add icons on the Desktop for Spring Tool Suite
 - Pre-fetch the Maven repository
@@ -69,6 +68,9 @@ Start up the new box:
 
 ## Roadmap
 
+Have a look at how to support other technologies like:
+
+- Support Postgresql
 - Support NoSQL databases like Cassandra, MongoDB
 - Support Elasticsearch
 - Support for LibSass
