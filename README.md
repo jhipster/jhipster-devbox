@@ -47,6 +47,10 @@ Start up the new box:
       - Then select your new keymap by clicking on the "EN" icon again
 - Configure your IDE
   - Spring Tool Suite is installed in your `/home/vagrant/applications` directory
+- Configure your MySQL database
+  - Default password for the `root` user is `vagrant`
+  - MySQL workbench is installed by default
+  - If you want to use MySQL with JHispter, don't forget to edit your `application-dev.yml` and `application-prod.yml` files
 - Configure you browser
   - Firefox is installed
   - Chromium, which is the Open-Source version of Google Chrome, is also installed
