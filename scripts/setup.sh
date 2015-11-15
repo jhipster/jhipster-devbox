@@ -101,6 +101,11 @@ sudo apt-get install -y mysql-server mysql-workbench
 # install Heroku toolbelt
 sudo wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
+# install Cloud Foundry client
+cd /opt && sudo curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&source=github" | tar -zx
+sudo ln -s /opt/cf /usr/bin/cf
+cd /home/vagrant
+
 # create shortcuts
 sudo mkdir /home/vagrant/Desktop
 ln -s /opt/sts-bundle/sts-${STS_VERSION}/STS /home/vagrant/Desktop/STS
