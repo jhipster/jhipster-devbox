@@ -8,8 +8,6 @@ sudo apt-get update
 # see https://github.com/jhipster/jhipster-docker/
 ################################################################################
 
-export JHIPSTER_VERSION='2.23.1'
-
 export JAVA_VERSION='8'
 export JAVA_HOME='/usr/lib/jvm/java-8-oracle'
 
@@ -44,11 +42,14 @@ sudo curl -fsSL http://archive.apache.org/dist/maven/maven-3/3.3.3/binaries/apac
 sudo curl -sL https://deb.nodesource.com/setup_4.x | sudo bash -
 sudo apt-get install -y nodejs unzip python g++ build-essential
 
+# update npm
+sudo npm install -g npm
+
 # install yeoman grunt bower grunt gulp
 sudo npm install -g yo bower grunt-cli gulp
 
 # install JHipster
-sudo npm install -g generator-jhipster@${JHIPSTER_VERSION}
+sudo npm install -g generator-jhipster
 
 ################################################################################
 # Install the graphical environment
