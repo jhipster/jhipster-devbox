@@ -21,9 +21,9 @@ It is fully based on Open Source software, most importantly:
 
 ## Customize your Vagrant box
 
-Modify your system properties, depending on your host's hardware, we recommend:
+This is very important! Modify your system properties, depending on your host's hardware. We recommend, at least:
 
-- 2 CPUs
+- 4 CPUs
 - 8 Gb of RAM
 - 128 Mb of video RAM
 
