@@ -107,9 +107,32 @@ cd /opt && sudo curl -L "https://cli.run.pivotal.io/stable?release=linux64-binar
 sudo ln -s /opt/cf /usr/bin/cf
 cd /home/vagrant
 
-#install Guake
+# install Guake
 sudo apt-get install -y guake
 sudo cp /usr/share/applications/guake.desktop /etc/xdg/autostart/
+
+# docker needs these installs
+sudo apt-get install -y lxc bsdtar
+sudo apt-get install -y linux-image-extra-$(uname -r)
+sudo modprobe aufs
+
+# install docker
+wget -qO- https://get.docker.com/ | sh
+
+# install docker-compose
+curl -L https://github.com/docker/compose/releases/download/1.5.1/docker-compose-`uname -s`-`uname -m` > docker-compose
+sudo mv docker-compose /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+# optimize docker experience
+source /etc/bash_completion.d/docker
+sudo usermod -aG docker `whoami`
+
+# provide m2
+mkdir -p /home/vagrant/.m2
+git clone https://github.com/jhipster/jhipster-travis-build /home/vagrant/jhipster-travis-build
+mv /home/vagrant/jhipster-travis-build/repository /home/vagrant/.m2/
+rm -Rf /home/vagrant/jhipster-travis-build
 
 # create shortcuts
 sudo mkdir /home/vagrant/Desktop
