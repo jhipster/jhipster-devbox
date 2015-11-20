@@ -107,6 +107,10 @@ cd /opt && sudo curl -L "https://cli.run.pivotal.io/stable?release=linux64-binar
 sudo ln -s /opt/cf /usr/bin/cf
 cd /home/vagrant
 
+#install Guake
+sudo apt-get install -y guake
+sudo cp /usr/share/applications/guake.desktop /etc/xdg/autostart/
+
 # create shortcuts
 sudo mkdir /home/vagrant/Desktop
 ln -s /opt/sts-bundle/sts-${STS_VERSION}/STS /home/vagrant/Desktop/STS
