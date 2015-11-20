@@ -62,7 +62,7 @@ sudo echo 'LC_ALL=en_US.UTF-8' >> /etc/environment
 sudo echo 'LC_CTYPE=en_US.UTF-8' >> /etc/environment
 
 # install languages
-sudo apt-get install language-pack-fr
+sudo apt-get install -y language-pack-fr
 
 # run GUI as non-privileged user
 sudo echo 'allowed_users=anybody' > /etc/X11/Xwrapper.config
@@ -106,6 +106,10 @@ sudo wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 cd /opt && sudo curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&source=github" | tar -zx
 sudo ln -s /opt/cf /usr/bin/cf
 cd /home/vagrant
+
+#install Guake
+sudo apt-get install -y guake
+sudo cp /usr/share/applications/guake.desktop /etc/xdg/autostart/
 
 # create shortcuts
 sudo mkdir /home/vagrant/Desktop
