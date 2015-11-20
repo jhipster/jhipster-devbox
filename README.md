@@ -1,6 +1,8 @@
-# Official Vagrant configuration for JHipster
+# JHipster official "development box"
 
-__This is under development, do NOT use it yet__
+## Introduction
+
+This is a [Vagrant](https://www.vagrantup.com/) configuration to set up a complete, virtualized development environment for JHipster users.
 
 ## Usage
 
@@ -50,10 +52,13 @@ Start up the new box:
 - Configure your MySQL database
   - Default password for the `root` user is `vagrant`
   - MySQL workbench is installed by default
-  - If you want to use MySQL with JHispter, don't forget to edit your `application-dev.yml` and `application-prod.yml` files
+  - If you want to use MySQL with JHipster, don't forget to edit your `application-dev.yml` and `application-prod.yml` files
 - Configure you browser
   - Firefox is installed
   - Chromium, which is the Open-Source version of Google Chrome, is also installed
+- Other available tools
+  - [Guake](http://guake-project.org/) is installed, hit "F12" to have your terminal
+  - The [Atom](https://atom.io/) text editor is installed
 - Generate your application
   - Run `yo jhipster` and use JHipster normally
 - Use the JHipster tools
@@ -62,10 +67,4 @@ Start up the new box:
 
 ## Roadmap
 
-Have a look at how to support other technologies like:
-
-- Support Postgresql
-- Support NoSQL databases like Cassandra, MongoDB
-- Support Elasticsearch
-- Support for LibSass
-- Support CloudFoundry
+We plan on using Docker Compose to configure and use all the services used by your application: MySQL, Postgresql, MongoDB, Cassandra, Elasticsearch
