@@ -63,7 +63,7 @@ Start up the new box:
   - Run `yo jhipster` and use JHipster normally
 - Use the JHipster tools
   - Running `mvn` will run your JHipster application on port `8080`. As this port is forwarded to your host, you can also use `http://localhost:8080` on your host machine
-  - Running `grunt` will launch your AngularJS front-end with BrowserSync on port `3000`: it is also forwarded to your host, so you can also use `http://localhost3000` on your host machine
+  - Running `grunt` will launch your AngularJS front-end with BrowserSync on port `3000`: it is also forwarded to your host, so you can also use `http://localhost:3000` on your host machine
 
 ## Roadmap
 
