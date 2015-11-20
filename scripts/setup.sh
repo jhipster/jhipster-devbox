@@ -62,7 +62,7 @@ sudo echo 'LC_ALL=en_US.UTF-8' >> /etc/environment
 sudo echo 'LC_CTYPE=en_US.UTF-8' >> /etc/environment
 
 # install languages
-sudo apt-get install language-pack-fr
+sudo apt-get install -y language-pack-fr
 
 # run GUI as non-privileged user
 sudo echo 'allowed_users=anybody' > /etc/X11/Xwrapper.config
