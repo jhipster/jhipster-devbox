@@ -80,6 +80,7 @@ export STS_VERSION='3.7.1.RELEASE'
 
 cd /opt && wget  http://dist.springsource.com/release/STS/${STS_VERSION}/dist/e4.5/spring-tool-suite-${STS_VERSION}-e4.5.1-linux-gtk-x86_64.tar.gz
 cd /opt && tar -zxvf spring-tool-suite-${STS_VERSION}-e4.5.1-linux-gtk-x86_64.tar.gz
+cd /opt && rm -f spring-tool-suite-${STS_VERSION}-e4.5.1-linux-gtk-x86_64.tar.gz
 sudo chown -R vagrant:vagrant /opt
 cd /home/vagrant
 
@@ -99,6 +100,15 @@ echo 'mysql-server mysql-server/root_password password vagrant' | sudo debconf-s
 echo 'mysql-server mysql-server/root_password_again password vagrant' | sudo debconf-set-selections
 sudo apt-get install -y mysql-server mysql-workbench
 
+# install PgAdmin
+sudo apt-get install -y pgadmin3
+
+# install DataStax DevCenter
+export DEVCENTER_VERSION='1.4.1'
+cd /opt && sudo curl -L http://downloads.datastax.com/devcenter/DevCenter-${DEVCENTER_VERSION}-linux-gtk-x86_64.tar.gz | tar -zx
+sudo chown -R vagrant:vagrant /opt/DevCenter
+cd /home/vagrant
+
 # install Heroku toolbelt
 sudo wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
@@ -114,4 +124,5 @@ sudo cp /usr/share/applications/guake.desktop /etc/xdg/autostart/
 # create shortcuts
 sudo mkdir /home/vagrant/Desktop
 ln -s /opt/sts-bundle/sts-${STS_VERSION}/STS /home/vagrant/Desktop/STS
+ln -s /opt/DevCenter/DevCenter /home/vagrant/Desktop/DevCenter
 sudo chown -R vagrant:vagrant /home/vagrant
