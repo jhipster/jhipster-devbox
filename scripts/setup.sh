@@ -93,6 +93,9 @@ rm -f atom-amd64.deb
 # install Chromium Browser
 sudo apt-get install -y chromium-browser
 
+# install mysql-workbench
+sudo apt-get install -y mysql-workbench
+
 # install Heroku toolbelt
 sudo wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
