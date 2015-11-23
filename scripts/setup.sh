@@ -93,12 +93,6 @@ rm -f atom-amd64.deb
 # install Chromium Browser
 sudo apt-get install -y chromium-browser
 
-# install MySQL with default passwoard as 'vagrant'
-export DEBIAN_FRONTEND=noninteractive
-echo 'mysql-server mysql-server/root_password password vagrant' | sudo debconf-set-selections
-echo 'mysql-server mysql-server/root_password_again password vagrant' | sudo debconf-set-selections
-sudo apt-get install -y mysql-server mysql-workbench
-
 # install Heroku toolbelt
 sudo wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
@@ -117,7 +111,7 @@ sudo apt-get install -y linux-image-extra-$(uname -r)
 sudo modprobe aufs
 
 # install docker
-wget -qO- https://get.docker.com/ | sh
+curl -sSL https://get.docker.com/ | sh
 
 # install docker-compose
 curl -L https://github.com/docker/compose/releases/download/1.5.1/docker-compose-`uname -s`-`uname -m` > docker-compose
@@ -126,7 +120,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 # optimize docker experience
 source /etc/bash_completion.d/docker
-sudo usermod -aG docker `whoami`
+sudo usermod -aG docker vagrant
 
 # provide m2
 mkdir -p /home/vagrant/.m2
