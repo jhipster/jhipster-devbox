@@ -99,6 +99,9 @@ echo 'mysql-server mysql-server/root_password password vagrant' | sudo debconf-s
 echo 'mysql-server mysql-server/root_password_again password vagrant' | sudo debconf-set-selections
 sudo apt-get install -y mysql-server mysql-workbench
 
+# install PgAdmin
+sudo apt-get install -y pgadmin3
+
 # install Heroku toolbelt
 sudo wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
