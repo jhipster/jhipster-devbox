@@ -100,9 +100,6 @@ echo 'mysql-server mysql-server/root_password password vagrant' | sudo debconf-s
 echo 'mysql-server mysql-server/root_password_again password vagrant' | sudo debconf-set-selections
 sudo apt-get install -y mysql-server mysql-workbench
 
-# install PgAdmin
-sudo apt-get install -y pgadmin3
-
 # install DataStax DevCenter
 export DEVCENTER_VERSION='1.4.1'
 cd /opt && sudo curl -L http://downloads.datastax.com/devcenter/DevCenter-${DEVCENTER_VERSION}-linux-gtk-x86_64.tar.gz | tar -zx
