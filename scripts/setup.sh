@@ -111,6 +111,12 @@ cd /home/vagrant
 sudo apt-get install -y guake
 sudo cp /usr/share/applications/guake.desktop /etc/xdg/autostart/
 
+# provide m2
+mkdir -p /home/vagrant/.m2
+git clone https://github.com/jhipster/jhipster-travis-build /home/vagrant/jhipster-travis-build
+mv /home/vagrant/jhipster-travis-build/repository /home/vagrant/.m2/
+rm -Rf /home/vagrant/jhipster-travis-build
+
 # create shortcuts
 sudo mkdir /home/vagrant/Desktop
 ln -s /opt/sts-bundle/sts-${STS_VERSION}/STS /home/vagrant/Desktop/STS
