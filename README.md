@@ -16,7 +16,11 @@ It is fully based on Open Source software, most importantly:
 - Spring Tool Suite
 - Chromium Web browser
 
-## Quick setup
+## Setup
+
+The "Quick setup" provides a pre-build Virtual Machine, and the "Manual setup" let you build your Virtual Machine yourself. We recommend you use the "Quick setup" if you don't know which option to choose.
+
+### Quick setup
 
 Pre-built distributions of this "development box" are available on [Atlas](https://atlas.hashicorp.com/jhipster).
 
@@ -26,7 +30,7 @@ To install the latest distribution, just run:
 
 You can then tune your installation, by following the next sections on customizing and configuring your "development box".
 
-## Manual setup 
+### Manual setup
 
 This generates a new "development box" directly from this repository.
 
