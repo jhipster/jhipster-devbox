@@ -2,6 +2,7 @@
 
 # update the system
 sudo apt-get update
+sudo apt-get upgrade
 
 ################################################################################
 # This is a port of the JHipster Dockerfile,
@@ -11,7 +12,7 @@ sudo apt-get update
 export JAVA_VERSION='8'
 export JAVA_HOME='/usr/lib/jvm/java-8-oracle'
 
-export MAVEN_VERSION='3.3.3'
+export MAVEN_VERSION='3.3.9'
 export MAVEN_HOME='/usr/share/maven'
 export PATH=$PATH:$MAVEN_HOME/bin
 
@@ -36,7 +37,7 @@ sudo apt-get install -y --force-yes oracle-java${JAVA_VERSION}-installer
 sudo  update-java-alternatives -s java-8-oracle
 
 # install maven
-sudo curl -fsSL http://archive.apache.org/dist/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz | sudo tar xzf - -C /usr/share && sudo mv /usr/share/apache-maven-3.3.3 /usr/share/maven && sudo ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+sudo curl -fsSL http://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz | sudo tar xzf - -C /usr/share && sudo mv /usr/share/apache-maven-${MAVEN_VERSION} /usr/share/maven && sudo ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
 
 # install node.js
 sudo curl -sL https://deb.nodesource.com/setup_4.x | sudo bash -
@@ -122,3 +123,5 @@ rm -Rf /home/vagrant/jhipster-travis-build
 sudo mkdir /home/vagrant/Desktop
 ln -s /opt/sts-bundle/sts-${STS_VERSION}/STS /home/vagrant/Desktop/STS
 sudo chown -R vagrant:vagrant /home/vagrant
+
+sudo apt-get clean
