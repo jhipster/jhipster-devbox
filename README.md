@@ -6,7 +6,7 @@ This is a [Vagrant](https://www.vagrantup.com/) configuration to set up a comple
 
 ## Usage
 
-This Vagrantfile generates a complete development environment for developing a JHipster application.
+The JHipster "development box" is a complete development environment for JHipster users.
 
 It requires to have [Vagrant](https://www.vagrantup.com/) installed on your machine.
 
@@ -16,12 +16,24 @@ It is fully based on Open Source software, most importantly:
 - Spring Tool Suite
 - Chromium Web browser
 
-## Create a Vagrant box
+## Quick setup
+
+Pre-built distributions of this "development box" are available on [Atlas](https://atlas.hashicorp.com/jhipster).
+
+To install the latest distribution, just run:
+
+`vagrant init jhipster/jhipster-devbox; vagrant up --provider virtualbox`
+
+You can then tune your installation, by following the next sections on customizing and configuring your "development box".
+
+## Manual setup 
+
+This generates a new "development box" directly from this repository.
 
 - Clone this repository: `git clone https://github.com/jhipster/jhipster-devbox.git`
 - Run `vagrant up`
 
-## Customize your Vagrant box
+## Customize your box
 
 This is very important! Modify your system properties, depending on your host's hardware. We recommend, at least:
 
@@ -64,7 +76,3 @@ Start up the new box:
 - Use the JHipster tools
   - Running `mvn` will run your JHipster application on port `8080`. As this port is forwarded to your host, you can also use `http://localhost:8080` on your host machine
   - Running `grunt` will launch your AngularJS front-end with BrowserSync on port `3000`: it is also forwarded to your host, so you can also use `http://localhost:3000` on your host machine
-
-## Roadmap
-
-We plan on using Docker Compose to configure and use all the services used by your application: MySQL, Postgresql, MongoDB, Cassandra, Elasticsearch
