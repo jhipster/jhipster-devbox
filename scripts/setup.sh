@@ -77,7 +77,7 @@ sudo apt-get install -y gnome-session-flashback
 ################################################################################
 
 # install Spring Tool Suite
-export STS_VERSION='3.7.1.RELEASE'
+export STS_VERSION='3.7.2.RELEASE'
 
 cd /opt && wget  http://dist.springsource.com/release/STS/${STS_VERSION}/dist/e4.5/spring-tool-suite-${STS_VERSION}-e4.5.1-linux-gtk-x86_64.tar.gz
 cd /opt && tar -zxvf spring-tool-suite-${STS_VERSION}-e4.5.1-linux-gtk-x86_64.tar.gz
@@ -86,7 +86,7 @@ sudo chown -R vagrant:vagrant /opt
 cd /home/vagrant
 
 # install Atom
-export ATOM_VERSION='v1.2.0'
+export ATOM_VERSION='v1.2.4'
 
 wget https://github.com/atom/atom/releases/download/${ATOM_VERSION}/atom-amd64.deb atom-amd64.deb
 sudo dpkg -i atom-amd64.deb
