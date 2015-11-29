@@ -126,4 +126,3 @@ sudo chown -R vagrant:vagrant /home/vagrant
 
 # clean the box
 sudo apt-get clean
-cat /dev/null > ~/.bash_history && history -c
