@@ -85,13 +85,6 @@ cd /opt && rm -f spring-tool-suite-${STS_VERSION}-e4.5.1-linux-gtk-x86_64.tar.gz
 sudo chown -R vagrant:vagrant /opt
 cd /home/vagrant
 
-# install Atom
-export ATOM_VERSION='v1.2.4'
-
-wget https://github.com/atom/atom/releases/download/${ATOM_VERSION}/atom-amd64.deb atom-amd64.deb
-sudo dpkg -i atom-amd64.deb
-rm -f atom-amd64.deb
-
 # install Chromium Browser
 sudo apt-get install -y chromium-browser
 
@@ -113,6 +106,13 @@ cd /home/vagrant
 sudo apt-get install -y guake
 sudo cp /usr/share/applications/guake.desktop /etc/xdg/autostart/
 
+# install Atom
+
+wget https://github.com/atom/atom/releases/download/v1.2.4/atom-amd64.deb
+sudo dpkg -i atom-amd64.deb
+rm -f atom-amd64.deb
+sudo dpkg --configure -a
+
 # provide m2
 mkdir -p /home/vagrant/.m2
 git clone https://github.com/jhipster/jhipster-travis-build /home/vagrant/jhipster-travis-build
@@ -126,3 +126,5 @@ sudo chown -R vagrant:vagrant /home/vagrant
 
 # clean the box
 sudo apt-get clean
+dd if=/dev/zero of=/EMPTY bs=1M > /dev/null 2>&1
+rm -f /EMPTY
