@@ -64,7 +64,7 @@ Start up the new box:
       - Use the `+` sign to add your keyboard layout
       - Then select your new keymap by clicking on the "EN" icon again
 - Configure your IDE
-  - Spring Tool Suite is installed in your `/home/vagrant/applications` directory
+  - Spring Tool Suite is installed in the `/opt/sts-bundle/` directory
 - Configure your MySQL database
   - Default password for the `root` user is `vagrant`
   - MySQL workbench is installed by default
