@@ -24,9 +24,16 @@ The "Quick setup" provides a pre-build Virtual Machine, and the "Manual setup" l
 
 Pre-built distributions of this "development box" are available on [Atlas](https://atlas.hashicorp.com/jhipster).
 
-To install the latest distribution, just run:
+To install the latest distribution, please run:
+
+On Mac or Linux
 
 `vagrant init jhipster/jhipster-devbox; vagrant up --provider virtualbox`
+
+On Windows
+
+`vagrant init jhipster/jhipster-devbox
+vagrant up --provider virtualbox`
 
 You can then tune your installation, by following the next sections on customizing and configuring your "development box".
 
