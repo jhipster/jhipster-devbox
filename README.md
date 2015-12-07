@@ -32,8 +32,8 @@ On Mac or Linux
 
 On Windows
 
-`vagrant init jhipster/jhipster-devbox
-vagrant up --provider virtualbox`
+`vagrant init jhipster/jhipster-devbox`
+`vagrant up --provider virtualbox`
 
 You can then tune your installation, by following the next sections on customizing and configuring your "development box".
 
