@@ -50,7 +50,7 @@ sudo npm install -g npm
 sudo npm install -g yo bower grunt-cli gulp
 
 # install JHipster
-sudo npm install -g generator-jhipster@2.25.0
+sudo npm install -g generator-jhipster@2.26.0
 
 ################################################################################
 # Install the graphical environment
