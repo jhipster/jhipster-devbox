@@ -50,7 +50,7 @@ sudo npm install -g npm
 sudo npm install -g yo bower grunt-cli gulp
 
 # install JHipster
-sudo npm install -g generator-jhipster@2.26.2
+sudo npm install -g generator-jhipster@2.27.0
 
 ################################################################################
 # Install the graphical environment
@@ -108,7 +108,7 @@ sudo cp /usr/share/applications/guake.desktop /etc/xdg/autostart/
 
 # install Atom
 
-wget https://github.com/atom/atom/releases/download/v1.3.2/atom-amd64.deb
+wget https://github.com/atom/atom/releases/download/v1.4.0/atom-amd64.deb
 sudo dpkg -i atom-amd64.deb
 rm -f atom-amd64.deb
 sudo dpkg --configure -a
