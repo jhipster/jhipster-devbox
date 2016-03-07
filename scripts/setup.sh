@@ -113,6 +113,16 @@ sudo dpkg -i atom-amd64.deb
 rm -f atom-amd64.deb
 sudo dpkg --configure -a
 
+# install Docker
+curl -sL https://get.docker.io/ | sudo sh
+
+# configure docker group (docker commands can be launched without sudo)
+sudo usermod -aG docker vagrant
+
+# install docker compose
+sudo curl -L https://github.com/docker/compose/releases/download/1.6.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
 # provide m2
 mkdir -p /home/vagrant/.m2
 git clone https://github.com/jhipster/jhipster-travis-build /home/vagrant/jhipster-travis-build
