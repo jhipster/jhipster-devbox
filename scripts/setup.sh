@@ -52,6 +52,9 @@ sudo npm install -g yo bower grunt-cli gulp
 # install JHipster
 sudo npm install -g generator-jhipster@2.27.1
 
+# install JHipster UML
+sudo npm install -g jhipster-uml
+
 ################################################################################
 # Install the graphical environment
 ################################################################################
