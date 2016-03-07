@@ -94,6 +94,12 @@ echo 'mysql-server mysql-server/root_password password vagrant' | sudo debconf-s
 echo 'mysql-server mysql-server/root_password_again password vagrant' | sudo debconf-set-selections
 sudo apt-get install -y mysql-server mysql-workbench
 
+# install DataStax DevCenter
+export DEVCENTER_VERSION='1.4.1'
+cd /opt && sudo curl -L http://downloads.datastax.com/devcenter/DevCenter-${DEVCENTER_VERSION}-linux-gtk-x86_64.tar.gz | tar -zx
+sudo chown -R vagrant:vagrant /opt/DevCenter
+cd /home/vagrant
+
 # install Heroku toolbelt
 sudo wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
@@ -122,6 +128,7 @@ rm -Rf /home/vagrant/jhipster-travis-build
 # create shortcuts
 sudo mkdir /home/vagrant/Desktop
 ln -s /opt/sts-bundle/sts-${STS_VERSION}/STS /home/vagrant/Desktop/STS
+ln -s /opt/DevCenter/DevCenter /home/vagrant/Desktop/DevCenter
 sudo chown -R vagrant:vagrant /home/vagrant
 
 # clean the box
