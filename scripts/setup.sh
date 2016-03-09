@@ -52,6 +52,9 @@ sudo npm install -g yo bower grunt-cli gulp
 # install JHipster
 sudo npm install -g generator-jhipster@2.27.2
 
+# install JHipster UML
+sudo npm install -g jhipster-uml@1.6.1
+
 ################################################################################
 # Install the graphical environment
 ################################################################################
@@ -110,6 +113,16 @@ wget https://github.com/atom/atom/releases/download/v1.5.4/atom-amd64.deb
 sudo dpkg -i atom-amd64.deb
 rm -f atom-amd64.deb
 sudo dpkg --configure -a
+
+# install Docker
+curl -sL https://get.docker.io/ | sudo sh
+
+# configure docker group (docker commands can be launched without sudo)
+sudo usermod -aG docker vagrant
+
+# install docker compose
+sudo curl -L https://github.com/docker/compose/releases/download/1.6.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 
 # provide m2
 mkdir -p /home/vagrant/.m2
