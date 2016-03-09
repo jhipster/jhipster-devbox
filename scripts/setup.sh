@@ -88,11 +88,6 @@ cd /home/vagrant
 # install Chromium Browser
 sudo apt-get install -y chromium-browser
 
-# install MySQL with default passwoard as 'vagrant'
-export DEBIAN_FRONTEND=noninteractive
-echo 'mysql-server mysql-server/root_password password vagrant' | sudo debconf-set-selections
-echo 'mysql-server mysql-server/root_password_again password vagrant' | sudo debconf-set-selections
-sudo apt-get install -y mysql-server mysql-workbench
 
 # install PgAdmin
 sudo apt-get install -y pgadmin3
