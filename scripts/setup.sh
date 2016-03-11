@@ -134,6 +134,7 @@ rm -Rf /home/vagrant/jhipster-travis-build
 mkdir /home/vagrant/Desktop
 ln -s /opt/sts-bundle/sts-${STS_VERSION}/STS /home/vagrant/Desktop/STS
 chown -R vagrant:vagrant /home/vagrant
+echo 'alias sts=/opt/sts-bundle/sts-${STS_VERSION}/STS' >> /home/vagrant/.bashrc
 
 # clean the box
 apt-get clean
