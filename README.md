@@ -73,10 +73,6 @@ Start up the new box:
       - Then select your new keymap by clicking on the "EN" icon again
 - Configure your IDE
   - Spring Tool Suite is installed in the `/opt/sts-bundle/` directory
-- Configure your MySQL database
-  - Default password for the `root` user is `vagrant`
-  - MySQL workbench is installed by default
-  - If you want to use MySQL with JHipster, don't forget to edit your `application-dev.yml` and `application-prod.yml` files
 - Configure you browser
   - Firefox is installed
   - Chromium, which is the Open-Source version of Google Chrome, is also installed
@@ -85,6 +81,9 @@ Start up the new box:
   - The [Atom](https://atom.io/) text editor is installed
 - Generate your application
   - Run `yo jhipster` and use JHipster normally
+- Configure your database
+  - Run your database from Docker. For example, with MySQL use `docker-compose -f src/main/docker/mysql.yml up`
+  - In your application, don't forget to edit your `application-dev.yml` and `application-prod.yml` files so you have the correct connection setup for your database server
 - Use the JHipster tools
   - Running `mvn` will run your JHipster application on port `8080`. As this port is forwarded to your host, you can also use `http://localhost:8080` on your host machine
-  - Running `grunt` will launch your AngularJS front-end with BrowserSync on port `3000`: it is also forwarded to your host, so you can also use `http://localhost:3000` on your host machine
+  - Running `gulp` will launch your AngularJS front-end with BrowserSync on port `9000`: it is also forwarded to your host, so you can also use `http://localhost:3000` on your host machine
