@@ -91,6 +91,8 @@ cd /home/vagrant
 # install Chromium Browser
 apt-get install -y chromium-browser
 
+# install MySQL Workbench
+apt-get install -y mysql-workbench
 
 # install PgAdmin
 apt-get install -y pgadmin3
