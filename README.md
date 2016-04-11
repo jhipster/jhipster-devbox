@@ -86,4 +86,4 @@ Start up the new box:
   - In your application, don't forget to edit your `application-dev.yml` and `application-prod.yml` files so you have the correct connection setup for your database server
 - Use the JHipster tools
   - Running `mvn` will run your JHipster application on port `8080`. As this port is forwarded to your host, you can also use `http://localhost:8080` on your host machine
-  - Running `gulp` will launch your AngularJS front-end with BrowserSync on port `9000`: it is also forwarded to your host, so you can also use `http://localhost:3000` on your host machine
+  - Running `gulp` will launch your AngularJS front-end with BrowserSync on port `9000`: it is also forwarded to your host, so you can also use `http://localhost:9000` on your host machine
