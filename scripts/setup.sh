@@ -46,14 +46,14 @@ apt-get install -y nodejs unzip python g++ build-essential
 # update npm
 npm install -g npm
 
-# install yeoman grunt bower grunt gulp
-npm install -g yo bower grunt-cli gulp
+# install yeoman grunt bower gulp
+npm install -g yo bower gulp
 
 # install JHipster
-npm install -g generator-jhipster@3.0.0
+npm install -g generator-jhipster@3.2.0
 
 # install JHipster UML
-npm install -g jhipster-uml@1.6.4
+npm install -g jhipster-uml@1.6.5
 
 ################################################################################
 # Install the graphical environment
@@ -80,11 +80,11 @@ apt-get install -y gnome-session-flashback
 ################################################################################
 
 # install Spring Tool Suite
-export STS_VERSION='3.7.2.RELEASE'
+export STS_VERSION='3.7.3.RELEASE'
 
-cd /opt && wget  http://dist.springsource.com/release/STS/${STS_VERSION}/dist/e4.5/spring-tool-suite-${STS_VERSION}-e4.5.1-linux-gtk-x86_64.tar.gz
-cd /opt && tar -zxvf spring-tool-suite-${STS_VERSION}-e4.5.1-linux-gtk-x86_64.tar.gz
-cd /opt && rm -f spring-tool-suite-${STS_VERSION}-e4.5.1-linux-gtk-x86_64.tar.gz
+cd /opt && wget  http://dist.springsource.com/release/STS/${STS_VERSION}/dist/e4.6/spring-tool-suite-${STS_VERSION}-e4.6-linux-gtk-x86_64.tar.gz
+cd /opt && tar -zxvf spring-tool-suite-${STS_VERSION}-e4.6-linux-gtk-x86_64.tar.gz
+cd /opt && rm -f spring-tool-suite-${STS_VERSION}-e4.6-linux-gtk-x86_64.tar.gz
 chown -R vagrant:vagrant /opt
 cd /home/vagrant
 
@@ -111,7 +111,7 @@ cp /usr/share/applications/guake.desktop /etc/xdg/autostart/
 
 # install Atom
 
-wget https://github.com/atom/atom/releases/download/v1.6.0/atom-amd64.deb
+wget https://github.com/atom/atom/releases/download/v1.7.3/atom-amd64.deb
 dpkg -i atom-amd64.deb
 rm -f atom-amd64.deb
 dpkg --configure -a
@@ -123,7 +123,7 @@ curl -sL https://get.docker.io/ | sh
 usermod -aG docker vagrant
 
 # install docker compose
-curl -L https://github.com/docker/compose/releases/download/1.6.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+curl -L https://github.com/docker/compose/releases/download/1.7.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
 # provide m2
