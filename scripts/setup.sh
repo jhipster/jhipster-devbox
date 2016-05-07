@@ -9,9 +9,6 @@ apt-get upgrade
 # see https://github.com/jhipster/jhipster-docker/
 ################################################################################
 
-export JAVA_VERSION='8'
-export JAVA_HOME='/usr/lib/jvm/java-8-oracle'
-
 export MAVEN_VERSION='3.3.9'
 export MAVEN_HOME='/usr/share/maven'
 export PATH=$PATH:$MAVEN_HOME/bin
@@ -23,18 +20,9 @@ locale-gen en_US.UTF-8
 dpkg-reconfigure locales
 
 # install utilities
-apt-get -y install vim git zip bzip2 fontconfig curl
-
-# install Java 8
-echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main' >> /etc/apt/sources.list
-echo 'deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main' >> /etc/apt/sources.list
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C2518248EEA14886
+apt-get -y install vim git zip bzip2 fontconfig curl openjdk-8-jdk
 
 apt-get update
-
-echo oracle-java-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
-apt-get install -y --force-yes oracle-java${JAVA_VERSION}-installer
- update-java-alternatives -s java-8-oracle
 
 # install maven
 curl -fsSL http://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz | tar xzf - -C /usr/share && mv /usr/share/apache-maven-${MAVEN_VERSION} /usr/share/maven && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
@@ -75,18 +63,21 @@ echo 'allowed_users=anybody' > /etc/X11/Xwrapper.config
 apt-get install -y ubuntu-desktop virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11
 apt-get install -y gnome-session-flashback
 
+apt-get update
+apt-get upgrade
+
 ################################################################################
 # Install the development tools
 ################################################################################
 
-# install Spring Tool Suite
-export STS_VERSION='3.7.3.RELEASE'
+# install Ubuntu Make - see https://wiki.ubuntu.com/ubuntu-make
 
-cd /opt && wget  http://dist.springsource.com/release/STS/${STS_VERSION}/dist/e4.6/spring-tool-suite-${STS_VERSION}-e4.6-linux-gtk-x86_64.tar.gz
-cd /opt && tar -zxvf spring-tool-suite-${STS_VERSION}-e4.6-linux-gtk-x86_64.tar.gz
-cd /opt && rm -f spring-tool-suite-${STS_VERSION}-e4.6-linux-gtk-x86_64.tar.gz
-chown -R vagrant:vagrant /opt
-cd /home/vagrant
+add-apt-repository -y ppa:ubuntu-desktop/ubuntu-make
+
+apt-get update
+apt-get upgrade
+
+apt install -y ubuntu-make
 
 # install Chromium Browser
 apt-get install -y chromium-browser
@@ -103,7 +94,6 @@ wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 # install Cloud Foundry client
 cd /opt && curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&source=github" | tar -zx
 ln -s /opt/cf /usr/bin/cf
-cd /home/vagrant
 
 #install Guake
 apt-get install -y guake
@@ -119,24 +109,19 @@ dpkg --configure -a
 # install Docker
 curl -sL https://get.docker.io/ | sh
 
-# configure docker group (docker commands can be launched without sudo)
-usermod -aG docker vagrant
-
 # install docker compose
 curl -L https://github.com/docker/compose/releases/download/1.7.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
-# provide m2
-mkdir -p /home/vagrant/.m2
-git clone https://github.com/jhipster/jhipster-travis-build /home/vagrant/jhipster-travis-build
-mv /home/vagrant/jhipster-travis-build/repository /home/vagrant/.m2/
-rm -Rf /home/vagrant/jhipster-travis-build
+################################################################################
+# Create JHipster user
+################################################################################
 
-# create shortcuts
-mkdir /home/vagrant/Desktop
-ln -s /opt/sts-bundle/sts-${STS_VERSION}/STS /home/vagrant/Desktop/STS
-chown -R vagrant:vagrant /home/vagrant
-echo 'alias sts=/opt/sts-bundle/sts-${STS_VERSION}/STS' >> /home/vagrant/.bashrc
+useradd jhipster --password xTZgpKFPrv2fA --home /home/jhipster --create-home
+adduser jhipster sudo
+
+# configure docker group (docker commands can be launched without sudo)
+usermod -aG docker jhipster
 
 # clean the box
 apt-get clean
