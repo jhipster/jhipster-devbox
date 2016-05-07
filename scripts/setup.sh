@@ -116,6 +116,9 @@ adduser jhipster sudo
 # configure docker group (docker commands can be launched without sudo)
 usermod -aG docker jhipster
 
+# fix unknown host errors
+sed -i -e 's/^127.0.0.1 localhost/127.0.0.1 localhost ubuntu-xenial/' /etc/hosts
+
 # clean the box
 apt-get autoclean
 apt-get clean
