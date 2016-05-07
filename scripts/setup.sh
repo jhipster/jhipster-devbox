@@ -9,10 +9,6 @@ apt-get upgrade
 # see https://github.com/jhipster/jhipster-docker/
 ################################################################################
 
-export MAVEN_VERSION='3.3.9'
-export MAVEN_HOME='/usr/share/maven'
-export PATH=$PATH:$MAVEN_HOME/bin
-
 export LANGUAGE='en_US.UTF-8'
 export LANG='en_US.UTF-8'
 export LC_ALL='en_US.UTF-8'
@@ -23,9 +19,6 @@ dpkg-reconfigure locales
 apt-get -y install vim git zip bzip2 fontconfig curl openjdk-8-jdk
 
 apt-get update
-
-# install maven
-curl -fsSL http://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz | tar xzf - -C /usr/share && mv /usr/share/apache-maven-${MAVEN_VERSION} /usr/share/maven && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
 
 # install node.js
 curl -sL https://deb.nodesource.com/setup_4.x | bash -
@@ -60,8 +53,8 @@ apt-get install -y language-pack-fr
 echo 'allowed_users=anybody' > /etc/X11/Xwrapper.config
 
 # install Ubuntu desktop and VirtualBox guest tools
-apt-get install -y ubuntu-desktop virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11
-apt-get install -y gnome-session-flashback
+apt-get install -y xubuntu-desktop virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11
+#apt-get install -y gnome-session-flashback
 
 apt-get update
 apt-get upgrade
@@ -117,13 +110,15 @@ chmod +x /usr/local/bin/docker-compose
 # Create JHipster user
 ################################################################################
 
-useradd jhipster --password xTZgpKFPrv2fA --home /home/jhipster --create-home
+useradd jhipster --password xTZgpKFPrv2fA --home /home/jhipster --create-home -s /bin/bash
 adduser jhipster sudo
 
 # configure docker group (docker commands can be launched without sudo)
 usermod -aG docker jhipster
 
 # clean the box
+apt-get autoclean
 apt-get clean
+apt-get autoremove
 dd if=/dev/zero of=/EMPTY bs=1M > /dev/null 2>&1
 rm -f /EMPTY

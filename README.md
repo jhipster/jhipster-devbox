@@ -4,7 +4,12 @@
 
 This is a [Vagrant](https://www.vagrantup.com/) configuration to set up a complete, virtualized development environment for JHipster users.
 
-## Usage
+1. [Usage](#usage)
+2. [Installation](#setup)
+3. [Customize your virtual machine](#customize)
+4. [Configure your new box and install new software](#configure)
+
+## <a name="usage"></a> Usage
 
 The JHipster "development box" is a complete development environment for JHipster users.
 
@@ -13,14 +18,18 @@ It requires to have [Vagrant](https://www.vagrantup.com/) installed on your mach
 It is fully based on Open Source software, most importantly:
 
 - Ubuntu
-- Spring Tool Suite
-- Chromium Web browser
+- OpenJDK (Oracle JDK can't be use because of license issues)
+- NPM, Bower and Gulp
+- Docker and Docker Compose (see the [JHipster Docker Compose documentation](http://jhipster.github.io/docker-compose/) to learn how to run your application, database or even a full micro-service architecture with Docker)
+- the Atom text editor
+- [Ubuntu Make](https://wiki.ubuntu.com/ubuntu-make) so you can easily install your favorite IDE (type `umake ide idea` for Intellij IDEA or `umake ide eclipse` for Eclipse)
+- Chromium and Firefox Web browsers
 
-## Setup
+## <a name="setup"></a> Installation
 
-The "Quick setup" provides a pre-build Virtual Machine, and the "Manual setup" let you build your Virtual Machine yourself. We recommend you use the "Quick setup" if you don't know which option to choose.
+The "Quick installation" provides a pre-build Virtual Machine, and the "Manual installation" let you build your Virtual Machine yourself. We recommend you use the "Quick installation" if you don't know which option to choose.
 
-### Quick setup
+### Quick installation
 
 Pre-built distributions of this "development box" are available on [Atlas](https://atlas.hashicorp.com/jhipster).
 
@@ -38,14 +47,15 @@ On Windows
 
 You can then tune your installation, by following the next sections on customizing and configuring your "development box".
 
-### Manual setup
+### Manual installation
 
 This generates a new "development box" directly from this repository.
 
 - Clone this repository: `git clone https://github.com/jhipster/jhipster-devbox.git`
+- It is wise to use a tag to have a stable version: the JHipster DevBox tags are the same as the JHipster Generator tags, so using the DevBox v3.2.0 also means using the generator v3.2.0
 - Run `vagrant up`
 
-## Customize your box
+## <a name="customize"></a> Customize your virtual machine
 
 This is very important! Modify your system properties, depending on your host's hardware. We recommend, at least:
 
@@ -53,12 +63,12 @@ This is very important! Modify your system properties, depending on your host's 
 - 8 Gb of RAM
 - 128 Mb of video RAM
 
-## Configure your new box
+## <a name="configure"></a> Configure your new box and install new software
 
 Start up the new box:
 
-- Login using the `vagrant` user (not the 'Ubuntu' user which is selected by default)
-  - Password is `vagrant`, be careful the default keymap is QWERTY!
+- Login using the `jhipster` user (not the 'Ubuntu' user which is selected by default)
+  - Password is `jhipster`
   - Before logging in, click on the Ubuntu logo to select the Window environment you want to use
     - We recommend you use `GNOME Flashback (Metacity)`, as it doesn't use 3D effects and will be a lot faster on VirtualBox
 - Configure your keyboard, if you are not using an English keyboard, once you have logged in:
@@ -72,7 +82,9 @@ Start up the new box:
       - Use the `+` sign to add your keyboard layout
       - Then select your new keymap by clicking on the "EN" icon again
 - Configure your IDE
-  - Spring Tool Suite is installed in the `/opt/sts-bundle/` directory
+  - Use [Ubuntu Make](https://wiki.ubuntu.com/ubuntu-make) so you can easily install your favorite IDE:
+    - type `umake ide idea` for Intellij IDEA
+    - type `umake ide eclipse` for Eclipse
 - Configure you browser
   - Firefox is installed
   - Chromium, which is the Open-Source version of Google Chrome, is also installed
@@ -85,5 +97,5 @@ Start up the new box:
   - Run your database from Docker. For example, with MySQL use `docker-compose -f src/main/docker/mysql.yml up`
   - In your application, don't forget to edit your `application-dev.yml` and `application-prod.yml` files so you have the correct connection setup for your database server
 - Use the JHipster tools
-  - Running `mvn` will run your JHipster application on port `8080`. As this port is forwarded to your host, you can also use `http://localhost:8080` on your host machine
+  - Running `./mvnw` will run your JHipster application on port `8080`. As this port is forwarded to your host, you can also use `http://localhost:8080` on your host machine
   - Running `gulp` will launch your AngularJS front-end with BrowserSync on port `9000`: it is also forwarded to your host, so you can also use `http://localhost:9000` on your host machine
