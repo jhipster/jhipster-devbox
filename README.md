@@ -79,19 +79,14 @@ Start up the new box:
 - Login using the `jhipster` user (not the 'Ubuntu' user which is selected by default)
   - Password is `jhipster`
 - Configure your keyboard, if you are not using an English keyboard, once you have logged in:
-    - If you chose `GNOME Flashback (Metacity)`:
-      - Go to `Applications > System Tools > System Settings`
-      - Select `Text Entry`
-      - Use the `+` sign to add your keyboard layout
-    - If you kept the default Ubuntu desktop:
-      - Click the "EN" icon on the top right of your screen
-      - Select `Text Entry Settings...``
-      - Use the `+` sign to add your keyboard layout
-      - Then select your new keymap by clicking on the "EN" icon again
+  - In the main menu, go to `Settings > Keyboard`
+  - Select `Layout`
+  - Untick the `Use system defaults` box
+  - Use the `+` sign to add your keyboard layout
 - Configure your IDE
   - Use [Ubuntu Make](https://wiki.ubuntu.com/ubuntu-make) so you can easily install your favorite IDE:
-    - type `umake ide idea` for Intellij IDEA
-    - type `umake ide eclipse` for Eclipse
+    - Type `umake ide idea` for Intellij IDEA
+    - Type `umake ide eclipse` for Eclipse
 - Configure you browser
   - Firefox is installed
   - Chromium, which is the Open-Source version of Google Chrome, is also installed
@@ -101,7 +96,7 @@ Start up the new box:
 - Generate your application
   - Run `yo jhipster` and use JHipster normally
 - Configure your database
-  - Run your database from Docker. For example, with MySQL use `docker-compose -f src/main/docker/mysql.yml up`
+  - Run your database with Docker. For example, for MySQL use `docker-compose -f src/main/docker/mysql.yml up`
   - In your application, don't forget to edit your `application-dev.yml` and `application-prod.yml` files so you have the correct connection setup for your database server
 - Use the JHipster tools
   - Running `./mvnw` will run your JHipster application on port `8080`. As this port is forwarded to your host, you can also use `http://localhost:8080` on your host machine
