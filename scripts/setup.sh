@@ -31,7 +31,7 @@ npm install -g npm
 npm install -g yo bower gulp
 
 # install JHipster
-npm install -g generator-jhipster@3.2.0
+npm install -g generator-jhipster@3.2.1
 
 # install JHipster UML
 npm install -g jhipster-uml@1.6.5
