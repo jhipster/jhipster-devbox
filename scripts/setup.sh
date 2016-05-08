@@ -81,6 +81,13 @@ apt-get install -y mysql-workbench
 # install PgAdmin
 apt-get install -y pgadmin3
 
+# install cqlsh
+apt-get install -y python-pip
+pip install cqlsh
+
+# install mongo client
+apt-get install -y mongodb-clients
+
 # install Heroku toolbelt
 wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
@@ -93,7 +100,6 @@ apt-get install -y guake
 cp /usr/share/applications/guake.desktop /etc/xdg/autostart/
 
 # install Atom
-
 wget https://github.com/atom/atom/releases/download/v1.7.3/atom-amd64.deb
 dpkg -i atom-amd64.deb
 rm -f atom-amd64.deb
