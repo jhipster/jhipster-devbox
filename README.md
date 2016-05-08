@@ -18,7 +18,7 @@ It requires to have [Vagrant](https://www.vagrantup.com/) installed on your mach
 It is fully based on Open Source software, most importantly:
 
 - Ubuntu
-- OpenJDK (Oracle JDK can't be use because of license issues)
+- OpenJDK (Oracle JDK can't be used because of license issues)
 - NPM, Bower and Gulp
 - Docker and Docker Compose (see the [JHipster Docker Compose documentation](http://jhipster.github.io/docker-compose/) to learn how to run your application, database or even a full micro-service architecture with Docker)
 - the Atom text editor
@@ -78,8 +78,6 @@ Start up the new box:
 
 - Login using the `jhipster` user (not the 'Ubuntu' user which is selected by default)
   - Password is `jhipster`
-  - Before logging in, click on the Ubuntu logo to select the Window environment you want to use
-    - We recommend you use `GNOME Flashback (Metacity)`, as it doesn't use 3D effects and will be a lot faster on VirtualBox
 - Configure your keyboard, if you are not using an English keyboard, once you have logged in:
     - If you chose `GNOME Flashback (Metacity)`:
       - Go to `Applications > System Tools > System Settings`
