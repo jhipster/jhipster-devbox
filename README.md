@@ -25,6 +25,15 @@ It is fully based on Open Source software, most importantly:
 - [Ubuntu Make](https://wiki.ubuntu.com/ubuntu-make) so you can easily install your favorite IDE (type `umake ide idea` for Intellij IDEA or `umake ide eclipse` for Eclipse)
 - Chromium and Firefox Web browsers
 
+This "development box" also have all client applications useful for working with a JHipster application:
+
+- MySQL Workbench
+- pgAdmin 3
+- MongoDB client
+- Cassandra command line (cqlsh)
+- Cloud Foundry command line (cf)
+- Heroku toolbelt
+
 ## <a name="setup"></a> Installation
 
 The "Quick installation" provides a pre-build Virtual Machine, and the "Manual installation" let you build your Virtual Machine yourself. We recommend you use the "Quick installation" if you don't know which option to choose.
