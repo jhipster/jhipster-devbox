@@ -4,6 +4,7 @@ Vagrant.configure("2") do |config|
     config.vm.network :forwarded_port, host: 8080, guest: 8080
     config.vm.network :forwarded_port, host: 9000, guest: 9000
     config.ssh.insert_key = true
+    config.vm.synced_folder '.', '/vagrant', disabled: true
 
     config.vm.provider :virtualbox do |vb|
         vb.gui = true
