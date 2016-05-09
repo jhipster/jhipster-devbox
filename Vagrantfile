@@ -2,7 +2,7 @@ Vagrant.configure("2") do |config|
     config.vm.box = "ubuntu/xenial64"
     config.vm.provision :shell, :path => "scripts/setup.sh"
     config.vm.network :forwarded_port, host: 8080, guest: 8080
-    config.vm.network :forwarded_port, host: 3000, guest: 3000
+    config.vm.network :forwarded_port, host: 9000, guest: 9000
     config.ssh.insert_key = true
 
     config.vm.provider :virtualbox do |vb|
