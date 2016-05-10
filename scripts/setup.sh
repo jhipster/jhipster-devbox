@@ -16,7 +16,7 @@ locale-gen en_US.UTF-8
 dpkg-reconfigure locales
 
 # install utilities
-apt-get -y install vim git zip bzip2 fontconfig curl openjdk-8-jdk
+apt-get -y install vim git zip bzip2 fontconfig curl openjdk-8-jdk language-pack-en
 
 apt-get update
 
