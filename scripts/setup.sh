@@ -16,9 +16,18 @@ locale-gen en_US.UTF-8
 dpkg-reconfigure locales
 
 # install utilities
-apt-get -y install vim git zip bzip2 fontconfig curl openjdk-8-jdk language-pack-en
+apt-get -y install vim git zip bzip2 fontconfig curl language-pack-en
 
-apt-get update
+# install Java 8
+sudo echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main' >> /etc/apt/sources.list
+sudo echo 'deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main' >> /etc/apt/sources.list
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C2518248EEA14886
+
+sudo apt-get update
+
+sudo echo oracle-java-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
+sudo apt-get install -y --force-yes oracle-java8-installer
+sudo  update-java-alternatives -s java-8-oracle
 
 # install node.js
 curl -sL https://deb.nodesource.com/setup_4.x | bash -
@@ -46,14 +55,11 @@ echo 'LANGUAGE=en_US.UTF-8' >> /etc/environment
 echo 'LC_ALL=en_US.UTF-8' >> /etc/environment
 echo 'LC_CTYPE=en_US.UTF-8' >> /etc/environment
 
-# install languages
-apt-get install -y language-pack-fr
-
 # run GUI as non-privileged user
 echo 'allowed_users=anybody' > /etc/X11/Xwrapper.config
 
 # install Ubuntu desktop and VirtualBox guest tools
-apt-get install -y xubuntu-desktop virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11
+apt-get install -y ubuntu-desktop virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11
 #apt-get install -y gnome-session-flashback
 
 apt-get update
@@ -112,19 +118,8 @@ curl -sL https://get.docker.io/ | sh
 curl -L https://github.com/docker/compose/releases/download/1.7.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
-################################################################################
-# Create JHipster user
-################################################################################
-
-useradd jhipster --password xTZgpKFPrv2fA --home /home/jhipster --create-home -s /bin/bash
-adduser jhipster sudo
-chown -R jhipster /usr/{lib/node_modules,bin,share}
-
 # configure docker group (docker commands can be launched without sudo)
-usermod -aG docker jhipster
-
-# fix unknown host errors
-sed -i -e 's/^127.0.0.1 localhost/127.0.0.1 localhost ubuntu-xenial/' /etc/hosts
+usermod -aG docker vagrant
 
 # clean the box
 apt-get autoclean

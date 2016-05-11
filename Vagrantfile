@@ -1,5 +1,5 @@
 Vagrant.configure("2") do |config|
-    config.vm.box = "ubuntu/xenial64"
+    config.vm.box = "ubuntu/trusty64"
     config.vm.provision :shell, :path => "scripts/setup.sh"
     config.vm.network :forwarded_port, host: 8080, guest: 8080
     config.vm.network :forwarded_port, host: 9000, guest: 9000
@@ -13,6 +13,5 @@ Vagrant.configure("2") do |config|
         vb.customize ["modifyvm", :id, "--memory", "4096"]
         vb.customize ["modifyvm", :id, "--vram", 64]
         vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
-        vb.customize ["modifyvm", :id, "--uartmode1", "file", "jhipster-devbox.log" ]
     end
 end
