@@ -76,12 +76,10 @@ This is very important! Modify your system properties, depending on your host's 
 
 Start up the new box:
 
-- Login using the `jhipster` user (not the 'Ubuntu' user which is selected by default)
-  - Password is `jhipster`
+- Login using the `vagrant` user (not the 'Ubuntu' user which is selected by default)
+  - Password is `vagrant` (please note that default keyboard layout is US!)
 - Configure your keyboard, if you are not using an English keyboard, once you have logged in:
-  - In the main menu, go to `Settings > Keyboard`
-  - Select `Layout`
-  - Untick the `Use system defaults` box
+  - Go to `Settings > Text Entry`
   - Use the `+` sign to add your keyboard layout
 - Configure your IDE
   - Use [Ubuntu Make](https://wiki.ubuntu.com/ubuntu-make) so you can easily install your favorite IDE:
