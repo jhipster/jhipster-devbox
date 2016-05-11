@@ -118,6 +118,7 @@ chmod +x /usr/local/bin/docker-compose
 
 useradd jhipster --password xTZgpKFPrv2fA --home /home/jhipster --create-home -s /bin/bash
 adduser jhipster sudo
+chown -R jhipster /usr/{lib/node_modules,bin,share}
 
 # configure docker group (docker commands can be launched without sudo)
 usermod -aG docker jhipster
