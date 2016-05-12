@@ -79,7 +79,9 @@ Start up the new box:
 - Login using the `vagrant` user (not the 'Ubuntu' user which is selected by default)
   - Password is `vagrant` (please note that default keyboard layout is US!)
 - Configure your keyboard, if you are not using an English keyboard, once you have logged in:
-  - Go to `Settings > Text Entry`
+  - Go to `Settings > Keyboard`
+  - Open the `Layout` tab
+  - Untick the `Use system default` box
   - Use the `+` sign to add your keyboard layout
 - Configure your IDE
   - Use [Ubuntu Make](https://wiki.ubuntu.com/ubuntu-make) so you can easily install your favorite IDE:
