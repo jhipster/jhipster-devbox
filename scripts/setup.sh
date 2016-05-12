@@ -103,6 +103,10 @@ wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 cd /opt && curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&source=github" | tar -zx
 ln -s /opt/cf /usr/bin/cf
 
+# install the AWS tools
+pip install awscli
+npm install -g aws-sdk progress node-uuid
+
 #install Guake
 apt-get install -y guake
 cp /usr/share/applications/guake.desktop /etc/xdg/autostart/
