@@ -123,6 +123,9 @@ chmod +x /usr/local/bin/docker-compose
 # configure docker group (docker commands can be launched without sudo)
 usermod -aG docker vagrant
 
+# add vagrant to group sudo
+adduser vagrant sudo
+
 # clean the box
 apt-get autoclean
 apt-get clean
