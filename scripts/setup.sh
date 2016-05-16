@@ -59,7 +59,7 @@ echo 'LC_CTYPE=en_US.UTF-8' >> /etc/environment
 echo 'allowed_users=anybody' > /etc/X11/Xwrapper.config
 
 # install Ubuntu desktop and VirtualBox guest tools
-apt-get install -y xubuntu-desktop virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11
+apt-get install -y xubuntu-desktop virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11 dictionaries-common
 #apt-get install -y gnome-session-flashback
 
 # change the default wallpaper
