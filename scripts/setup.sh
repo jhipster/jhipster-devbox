@@ -62,6 +62,9 @@ echo 'allowed_users=anybody' > /etc/X11/Xwrapper.config
 apt-get install -y xubuntu-desktop virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11 dictionaries-common
 #apt-get install -y gnome-session-flashback
 
+# remove light-locker (see https://github.com/jhipster/jhipster-devbox/issues/54)
+apt-get remove -y light-locker --purge
+
 # change the default wallpaper
 #wget https://jhipster.github.io/images/wallpaper-004-2560x1440.png -O /usr/share/xfce4/backdrops/jhipster-wallpaper.png
 wget https://raw.githubusercontent.com/jhipster/jhipster-devbox/master/images/jhipster-wallpaper.png -O /usr/share/xfce4/backdrops/jhipster-wallpaper.png
