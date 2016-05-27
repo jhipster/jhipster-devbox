@@ -40,7 +40,7 @@ npm install -g npm
 npm install -g yo bower gulp
 
 # install JHipster
-npm install -g generator-jhipster@3.3.0
+npm install -g generator-jhipster@3.4.0
 
 # install JHipster UML
 npm install -g jhipster-uml@1.6.5
@@ -137,8 +137,8 @@ usermod -aG docker vagrant
 adduser vagrant sudo
 
 # clean the box
-apt-get autoclean
-apt-get clean
-apt-get autoremove
+apt-get -y autoclean
+apt-get -y clean
+apt-get -y autoremove
 dd if=/dev/zero of=/EMPTY bs=1M > /dev/null 2>&1
 rm -f /EMPTY
