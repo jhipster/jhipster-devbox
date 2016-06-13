@@ -115,7 +115,7 @@ apt-get install -y guake
 cp /usr/share/applications/guake.desktop /etc/xdg/autostart/
 
 # install Atom
-wget https://github.com/atom/atom/releases/download/v1.7.3/atom-amd64.deb
+wget https://github.com/atom/atom/releases/download/v1.8.0/atom-amd64.deb
 dpkg -i atom-amd64.deb
 rm -f atom-amd64.deb
 dpkg --configure -a
