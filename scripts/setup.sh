@@ -130,12 +130,6 @@ curl -sL https://get.docker.io/ | sh
 curl -L https://github.com/docker/compose/releases/download/1.7.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
-# install Kitematic
-curl -Lo Kitematic.zip https://github.com/docker/kitematic/releases/download/v0.10.5/Kitematic-0.10.5-Ubuntu.deb
-unzip Kitematic.zip
-dpkg -i dist/Kitematic*.deb
-rm -r dist/ Kitematic.zip
-
 # configure docker group (docker commands can be launched without sudo)
 usermod -aG docker vagrant
 
