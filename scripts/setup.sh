@@ -40,7 +40,7 @@ npm install -g npm
 npm install -g yo bower gulp
 
 # install JHipster
-npm install -g generator-jhipster@3.5.1
+npm install -g generator-jhipster@3.6.0
 
 # install JHipster UML
 npm install -g jhipster-uml@1.6.5
@@ -115,7 +115,7 @@ apt-get install -y guake
 cp /usr/share/applications/guake.desktop /etc/xdg/autostart/
 
 # install Atom
-wget https://github.com/atom/atom/releases/download/v1.8.0/atom-amd64.deb
+wget https://github.com/atom/atom/releases/download/v1.9.8/atom-amd64.deb
 dpkg -i atom-amd64.deb
 rm -f atom-amd64.deb
 dpkg --configure -a
