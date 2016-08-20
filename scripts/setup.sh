@@ -114,6 +114,22 @@ npm install -g aws-sdk progress node-uuid
 apt-get install -y guake
 cp /usr/share/applications/guake.desktop /etc/xdg/autostart/
 
+# install zsh
+apt-get install -y zsh
+
+# install oh-my-zsh
+git clone git://github.com/robbyrussell/oh-my-zsh.git /home/vagrant/.oh-my-zsh
+cp /home/vagrant/.oh-my-zsh/templates/zshrc.zsh-template /home/vagrant/.zshrc
+chsh -s /bin/zsh
+echo 'SHELL=/bin/zsh' >> /etc/environment
+
+# install jhipster-oh-my-zsh-plugin
+git clone https://github.com/jhipster/jhipster-oh-my-zsh-plugin.git /home/vagrant/.oh-my-zsh/custom/plugins/jhipster
+sed -i -e "s/plugins=(git)/plugins=(git docker docker-compose jhipster)/g" /home/vagrant/.zshrc
+
+# change user to vagrant
+chown -R vagrant:vagrant /home/vagrant/.zshrc /home/vagrant/.oh-my-zsh
+
 # install Atom
 wget https://github.com/atom/atom/releases/download/v1.9.8/atom-amd64.deb
 dpkg -i atom-amd64.deb
