@@ -59,8 +59,7 @@ echo 'LC_CTYPE=en_US.UTF-8' >> /etc/environment
 echo 'allowed_users=anybody' > /etc/X11/Xwrapper.config
 
 # install Ubuntu desktop and VirtualBox guest tools
-apt-get install -y xubuntu-desktop virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11 dictionaries-common
-#apt-get install -y gnome-session-flashback
+apt-get install -y xubuntu-desktop virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11
 
 # remove light-locker (see https://github.com/jhipster/jhipster-devbox/issues/54)
 apt-get remove -y light-locker --purge
@@ -148,9 +147,6 @@ chmod +x /usr/local/bin/docker-compose
 
 # configure docker group (docker commands can be launched without sudo)
 usermod -aG docker vagrant
-
-# add vagrant to group sudo
-adduser vagrant sudo
 
 # clean the box
 apt-get -y autoclean
