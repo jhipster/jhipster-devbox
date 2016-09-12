@@ -40,7 +40,7 @@ npm install -g npm
 npm install -g yo bower gulp
 
 # install JHipster
-npm install -g generator-jhipster@3.6.1
+npm install -g generator-jhipster@3.7.0
 
 # install JHipster UML
 npm install -g jhipster-uml@1.6.5
@@ -130,7 +130,7 @@ sed -i -e "s/plugins=(git)/plugins=(git docker docker-compose jhipster)/g" /home
 chown -R vagrant:vagrant /home/vagrant/.zshrc /home/vagrant/.oh-my-zsh
 
 # install Atom
-wget https://github.com/atom/atom/releases/download/v1.9.8/atom-amd64.deb
+wget https://github.com/atom/atom/releases/download/v1.10.2/atom-amd64.deb
 dpkg -i atom-amd64.deb
 rm -f atom-amd64.deb
 dpkg --configure -a
@@ -142,7 +142,7 @@ expect -c 'spawn umake ide idea; send "\n";interact'
 curl -sL https://get.docker.io/ | sh
 
 # install docker compose
-curl -L https://github.com/docker/compose/releases/download/1.7.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+curl -L https://github.com/docker/compose/releases/download/1.8.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
 # configure docker group (docker commands can be launched without sudo)
