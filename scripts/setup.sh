@@ -16,7 +16,7 @@ locale-gen en_US.UTF-8
 dpkg-reconfigure locales
 
 # install utilities
-apt-get -y install vim git zip bzip2 fontconfig curl language-pack-en expect
+apt-get -y install vim git zip bzip2 fontconfig curl language-pack-en
 
 # install Java 8
 echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main' >> /etc/apt/sources.list
@@ -136,7 +136,7 @@ rm -f atom-amd64.deb
 dpkg --configure -a
 
 #install IDEA community edition
-expect -c 'spawn umake ide idea; send "\n";interact'
+umake ide idea /home/vagrant/.local/share/umake/ide/idea
 
 # install Docker
 curl -sL https://get.docker.io/ | sh
