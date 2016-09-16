@@ -129,11 +129,23 @@ sed -i -e "s/plugins=(git)/plugins=(git docker docker-compose jhipster)/g" /home
 # change user to vagrant
 chown -R vagrant:vagrant /home/vagrant/.zshrc /home/vagrant/.oh-my-zsh
 
-# install Atom
-wget https://github.com/atom/atom/releases/download/v1.10.2/atom-amd64.deb
-dpkg -i atom-amd64.deb
-rm -f atom-amd64.deb
-dpkg --configure -a
+# install Visual Studio Code
+umake ide visual-studio-code /home/vagrant/.local/share/umake/ide/visual-studio-code --accept-license
+
+# fix links (see https://github.com/ubuntu/ubuntu-make/issues/343)
+ln -sf /home/vagrant/.local/share/umake/ide/visual-studio-code/bin/code .local/share/umake/bin/visual-studio-code
+sed -i -e 's/visual-studio-code\/code/visual-studio-code\/bin\/code/' .local/share/applications/visual-studio-code.desktop
+
+# disable GPU (see https://code.visualstudio.com/docs/supporting/faq#_vs-code-main-window-is-blank)
+sed -i -e 's/"$CLI" "$@"/"$CLI" "--disable-gpu" "$@"/' .local/share/umake/ide/visual-studio-code/bin/code
+
+# install useful extensions
+visual-studio-code --install-extension redhat.java
+visual-studio-code --install-extension johnpapa.Angular1
+visual-studio-code --install-extension johnpapa.Angular2
+visual-studio-code --install-extension msjsdiag.debugger-for-chrome
+visual-studio-code --install-extension dbaeumer.vscode-eslint
+visual-studio-code --install-extension EditorConfig.EditorConfig
 
 #install IDEA community edition
 expect -c 'spawn umake ide idea; send "\n";interact'
