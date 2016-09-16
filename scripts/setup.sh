@@ -133,19 +133,19 @@ chown -R vagrant:vagrant /home/vagrant/.zshrc /home/vagrant/.oh-my-zsh
 umake ide visual-studio-code /home/vagrant/.local/share/umake/ide/visual-studio-code --accept-license
 
 # fix links (see https://github.com/ubuntu/ubuntu-make/issues/343)
-ln -sf /home/vagrant/.local/share/umake/ide/visual-studio-code/bin/code .local/share/umake/bin/visual-studio-code
-sed -i -e 's/visual-studio-code\/code/visual-studio-code\/bin\/code/' .local/share/applications/visual-studio-code.desktop
+sed -i -e 's/visual-studio-code\/code/visual-studio-code\/bin\/code/' /home/vagrant/.local/share/applications/visual-studio-code.desktop
 
 # disable GPU (see https://code.visualstudio.com/docs/supporting/faq#_vs-code-main-window-is-blank)
-sed -i -e 's/"$CLI" "$@"/"$CLI" "--disable-gpu" "$@"/' .local/share/umake/ide/visual-studio-code/bin/code
+sed -i -e 's/"$CLI" "$@"/"$CLI" "--disable-gpu" "$@"/' /home/vagrant/.local/share/umake/ide/visual-studio-code/bin/code
 
 # install useful extensions
-visual-studio-code --install-extension redhat.java
-visual-studio-code --install-extension johnpapa.Angular1
-visual-studio-code --install-extension johnpapa.Angular2
-visual-studio-code --install-extension msjsdiag.debugger-for-chrome
-visual-studio-code --install-extension dbaeumer.vscode-eslint
-visual-studio-code --install-extension EditorConfig.EditorConfig
+ln -sf /home/vagrant/.local/share/umake/ide/visual-studio-code/bin/code /usr/local/bin/code
+code --install-extension redhat.java
+code --install-extension johnpapa.Angular1
+code --install-extension johnpapa.Angular2
+code --install-extension msjsdiag.debugger-for-chrome
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension EditorConfig.EditorConfig
 
 #install IDEA community edition
 umake ide idea /home/vagrant/.local/share/umake/ide/idea
