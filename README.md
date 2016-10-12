@@ -19,7 +19,7 @@ It is fully based on Open Source software, most importantly:
 
 - Ubuntu
 - OpenJDK (Oracle JDK can't be used because of license issues)
-- NPM, Bower and Gulp
+- Yarn, NPM, Bower and Gulp
 - Docker and Docker Compose (see the [JHipster Docker Compose documentation](http://jhipster.github.io/docker-compose/) to learn how to run your application, database or even a full micro-service architecture with Docker)
 - [Ubuntu Make](https://wiki.ubuntu.com/ubuntu-make) so you can easily install your favorite IDE (type `umake ide idea` for Intellij IDEA or `umake ide eclipse` for Eclipse)
 - Chromium and Firefox Web browsers

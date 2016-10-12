@@ -36,14 +36,17 @@ apt-get install -y nodejs unzip python g++ build-essential
 # update npm
 npm install -g npm
 
+# install yarn
+npm install -g yarn
+
 # install yeoman grunt bower gulp
-npm install -g yo bower gulp
+yarn global add yo bower gulp
 
 # install JHipster
-npm install -g generator-jhipster@3.9.1
+yarn global add generator-jhipster@3.9.1
 
 # install JHipster UML
-npm install -g jhipster-uml@2.0.0
+yarn global add jhipster-uml@2.0.0
 
 ################################################################################
 # Install the graphical environment
@@ -107,7 +110,7 @@ ln -s /opt/cf /usr/bin/cf
 
 # install the AWS tools
 pip install awscli
-npm install -g aws-sdk progress node-uuid
+yarn global add aws-sdk progress node-uuid
 
 #install Guake
 apt-get install -y guake
@@ -159,6 +162,9 @@ chmod +x /usr/local/bin/docker-compose
 
 # configure docker group (docker commands can be launched without sudo)
 usermod -aG docker vagrant
+
+# fix ownership of yarn cache
+chown -R vagrant:vagrant /home/vagrant/.yarn-cache
 
 # clean the box
 apt-get -y autoclean
