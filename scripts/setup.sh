@@ -130,7 +130,7 @@ sed -i -e "s/plugins=(git)/plugins=(git docker docker-compose jhipster)/g" /home
 chown -R vagrant:vagrant /home/vagrant/.zshrc /home/vagrant/.oh-my-zsh
 
 # install Visual Studio Code
-umake ide visual-studio-code /home/vagrant/.local/share/umake/ide/visual-studio-code --accept-license
+su -c 'umake ide visual-studio-code /home/vagrant/.local/share/umake/ide/visual-studio-code --accept-license' vagrant
 
 # fix links (see https://github.com/ubuntu/ubuntu-make/issues/343)
 sed -i -e 's/visual-studio-code\/code/visual-studio-code\/bin\/code/' /home/vagrant/.local/share/applications/visual-studio-code.desktop
@@ -140,15 +140,15 @@ sed -i -e 's/"$CLI" "$@"/"$CLI" "--disable-gpu" "$@"/' /home/vagrant/.local/shar
 
 # install useful extensions
 ln -sf /home/vagrant/.local/share/umake/ide/visual-studio-code/bin/code /usr/local/bin/code
-code --install-extension redhat.java
-code --install-extension johnpapa.Angular1
-code --install-extension johnpapa.Angular2
-code --install-extension msjsdiag.debugger-for-chrome
-code --install-extension dbaeumer.vscode-eslint
-code --install-extension EditorConfig.EditorConfig
+su -c 'code --install-extension redhat.java' vagrant
+su -c 'code --install-extension johnpapa.Angular1' vagrant
+su -c 'code --install-extension johnpapa.Angular2' vagrant
+su -c 'code --install-extension msjsdiag.debugger-for-chrome' vagrant
+su -c 'code --install-extension dbaeumer.vscode-eslint' vagrant
+su -c 'code --install-extension EditorConfig.EditorConfig' vagrant
 
 #install IDEA community edition
-umake ide idea /home/vagrant/.local/share/umake/ide/idea
+su -c 'umake ide idea /home/vagrant/.local/share/umake/ide/idea' vagrant
 
 # install Docker
 curl -sL https://get.docker.io/ | sh
