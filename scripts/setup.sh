@@ -150,6 +150,10 @@ su -c 'code --install-extension EditorConfig.EditorConfig' vagrant
 #install IDEA community edition
 su -c 'umake ide idea /home/vagrant/.local/share/umake/ide/idea' vagrant
 
+# increase Inotify limit (see https://confluence.jetbrains.com/display/IDEADEV/Inotify+Watches+Limit)
+echo "fs.inotify.max_user_watches = 524288" > /etc/sysctl.d/60-inotify.conf
+sysctl -p --system
+
 # install Docker
 curl -sL https://get.docker.io/ | sh
 
