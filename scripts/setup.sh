@@ -30,7 +30,7 @@ apt-get install -y --force-yes oracle-java8-installer
 update-java-alternatives -s java-8-oracle
 
 # install node.js
-curl -sL https://deb.nodesource.com/setup_4.x | bash -
+curl -sL https://deb.nodesource.com/setup_6.x | bash -
 apt-get install -y nodejs unzip python g++ build-essential
 
 # update npm
