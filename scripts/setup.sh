@@ -30,7 +30,7 @@ apt-get install -y --force-yes oracle-java8-installer
 update-java-alternatives -s java-8-oracle
 
 # install node.js
-curl -sL https://deb.nodesource.com/setup_4.x | bash -
+curl -sL https://deb.nodesource.com/setup_6.x | bash -
 apt-get install -y nodejs unzip python g++ build-essential
 
 # update npm
@@ -43,10 +43,10 @@ npm install -g yarn
 yarn global add yo bower gulp
 
 # install JHipster
-yarn global add generator-jhipster@3.9.1
+yarn global add generator-jhipster@3.12.2
 
 # install JHipster UML
-yarn global add jhipster-uml@2.0.0
+yarn global add jhipster-uml@2.0.3
 
 ################################################################################
 # Install the graphical environment
@@ -122,7 +122,7 @@ apt-get install -y zsh
 # install oh-my-zsh
 git clone git://github.com/robbyrussell/oh-my-zsh.git /home/vagrant/.oh-my-zsh
 cp /home/vagrant/.oh-my-zsh/templates/zshrc.zsh-template /home/vagrant/.zshrc
-chsh -s /bin/zsh
+chsh -s /bin/zsh vagrant
 echo 'SHELL=/bin/zsh' >> /etc/environment
 
 # install jhipster-oh-my-zsh-plugin
@@ -133,7 +133,7 @@ sed -i -e "s/plugins=(git)/plugins=(git docker docker-compose jhipster)/g" /home
 chown -R vagrant:vagrant /home/vagrant/.zshrc /home/vagrant/.oh-my-zsh
 
 # install Visual Studio Code
-umake ide visual-studio-code /home/vagrant/.local/share/umake/ide/visual-studio-code --accept-license
+su -c 'umake ide visual-studio-code /home/vagrant/.local/share/umake/ide/visual-studio-code --accept-license' vagrant
 
 # fix links (see https://github.com/ubuntu/ubuntu-make/issues/343)
 sed -i -e 's/visual-studio-code\/code/visual-studio-code\/bin\/code/' /home/vagrant/.local/share/applications/visual-studio-code.desktop
@@ -143,21 +143,25 @@ sed -i -e 's/"$CLI" "$@"/"$CLI" "--disable-gpu" "$@"/' /home/vagrant/.local/shar
 
 # install useful extensions
 ln -sf /home/vagrant/.local/share/umake/ide/visual-studio-code/bin/code /usr/local/bin/code
-code --install-extension redhat.java
-code --install-extension johnpapa.Angular1
-code --install-extension johnpapa.Angular2
-code --install-extension msjsdiag.debugger-for-chrome
-code --install-extension dbaeumer.vscode-eslint
-code --install-extension EditorConfig.EditorConfig
+su -c 'code --install-extension redhat.java' vagrant
+su -c 'code --install-extension johnpapa.Angular1' vagrant
+su -c 'code --install-extension johnpapa.Angular2' vagrant
+su -c 'code --install-extension msjsdiag.debugger-for-chrome' vagrant
+su -c 'code --install-extension dbaeumer.vscode-eslint' vagrant
+su -c 'code --install-extension EditorConfig.EditorConfig' vagrant
 
 #install IDEA community edition
-umake ide idea /home/vagrant/.local/share/umake/ide/idea
+su -c 'umake ide idea /home/vagrant/.local/share/umake/ide/idea' vagrant
+
+# increase Inotify limit (see https://confluence.jetbrains.com/display/IDEADEV/Inotify+Watches+Limit)
+echo "fs.inotify.max_user_watches = 524288" > /etc/sysctl.d/60-inotify.conf
+sysctl -p --system
 
 # install Docker
 curl -sL https://get.docker.io/ | sh
 
 # install docker compose
-curl -L https://github.com/docker/compose/releases/download/1.8.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+curl -L https://github.com/docker/compose/releases/download/1.10.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
 # configure docker group (docker commands can be launched without sudo)
