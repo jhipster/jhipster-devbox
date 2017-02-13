@@ -112,7 +112,7 @@ ln -s /opt/cf /usr/bin/cf
 pip install awscli
 yarn global add aws-sdk progress node-uuid
 
-#install Guake
+# install Guake
 apt-get install -y guake
 cp /usr/share/applications/guake.desktop /etc/xdg/autostart/
 
@@ -149,6 +149,16 @@ su -c 'code --install-extension johnpapa.Angular2' vagrant
 su -c 'code --install-extension msjsdiag.debugger-for-chrome' vagrant
 su -c 'code --install-extension dbaeumer.vscode-eslint' vagrant
 su -c 'code --install-extension EditorConfig.EditorConfig' vagrant
+
+# install FiraCode font
+mkdir -p /home/vagrant/.local/share/fonts
+for type in Bold Light Medium Regular Retina; do wget -O /home/vagrant/.local/share/fonts/FiraCode-$type.ttf "https://github.com/tonsky/FiraCode/blob/master/distr/ttf/FiraCode-$type.ttf?raw=true"; done
+chown -R vagrant:vagrant /home/vagrant/.local
+fc-cache -f
+
+# use FiraCode in VS Code
+echo -e "{\n    \"editor.fontFamily\": \"Fira Code\",\n    \"editor.fontSize\": 14,\n    \"editor.fontLigatures\": true\n}" > /home/vagrant/.config/Code/User/settings.json
+chown -R vagrant:vagrant /home/vagrant/.config
 
 #install IDEA community edition
 su -c 'umake ide idea /home/vagrant/.local/share/umake/ide/idea' vagrant
