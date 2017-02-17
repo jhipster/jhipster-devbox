@@ -43,7 +43,7 @@ npm install -g yarn
 yarn global add yo bower gulp
 
 # install JHipster
-yarn global add generator-jhipster@4.0.4
+yarn global add generator-jhipster@4.0.5
 
 # install JHipster UML
 yarn global add jhipster-uml@2.0.3
