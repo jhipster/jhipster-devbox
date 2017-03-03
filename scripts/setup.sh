@@ -22,15 +22,17 @@ echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main' >> /etc/
 echo 'deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main' >> /etc/apt/sources.list
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C2518248EEA14886
 
-apt-get update
 
 echo oracle-java-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
 apt-get install -y --force-yes oracle-java8-installer
 update-java-alternatives -s java-8-oracle
 
-# install node.js
+# install node.js and yarn
 curl -sL https://deb.nodesource.com/setup_6.x | bash -
-apt-get install -y nodejs unzip python g++ build-essential
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+apt-get update
+apt-get install -y nodejs yarn unzip python g++ build-essential
 
 # update npm
 npm install -g npm
