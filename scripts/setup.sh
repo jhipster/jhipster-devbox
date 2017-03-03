@@ -18,14 +18,7 @@ dpkg-reconfigure locales
 apt-get -y install vim git zip bzip2 fontconfig curl language-pack-en
 
 # install Java 8
-echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main' >> /etc/apt/sources.list
-echo 'deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main' >> /etc/apt/sources.list
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C2518248EEA14886
-
-
-echo oracle-java-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
-apt-get install -y --force-yes oracle-java8-installer
-update-java-alternatives -s java-8-oracle
+apt-get install default-jdk
 
 # install node.js and yarn
 curl -sL https://deb.nodesource.com/setup_6.x | bash -
@@ -37,10 +30,13 @@ apt-get install -y nodejs yarn unzip python g++ build-essential
 # update npm
 npm install -g npm
 
+<<<<<<< HEAD
 # install yarn
 npm install -g yarn
 su -c "yarn config set prefix /home/vagrant/.yarn-global" vagrant
 
+=======
+>>>>>>> install openjdk rather than oracle jdk
 # install yeoman grunt bower gulp
 su -c "yarn global add yo bower gulp" vagrant
 
