@@ -149,6 +149,12 @@ su -c 'code --install-extension johnpapa.Angular2' vagrant
 su -c 'code --install-extension msjsdiag.debugger-for-chrome' vagrant
 su -c 'code --install-extension dbaeumer.vscode-eslint' vagrant
 su -c 'code --install-extension EditorConfig.EditorConfig' vagrant
+su -c 'code --install-extension PeterJausovec.vscode-docker' vagrant
+su -c 'code --install-extension abusaidm.html-snippets' vagrant
+su -c 'code --install-extension xabikos.JavaScriptSnippets' vagrant
+su -c 'code --install-extension christian-kohler.npm-intellisense' vagrant #intelligent js imports
+su -c 'code --install-extension alefragnani.project-manager' vagrant #manage several vscode windows
+su -c 'code --install-extension cbornet.jdl' vagrant #jhipster-ide JDL support
 
 #install IDEA community edition
 su -c 'umake ide idea /home/vagrant/.local/share/umake/ide/idea' vagrant
