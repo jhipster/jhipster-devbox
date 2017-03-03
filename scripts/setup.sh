@@ -156,11 +156,11 @@ su -c 'umake ide idea /home/vagrant/.local/share/umake/ide/idea' vagrant
 echo "fs.inotify.max_user_watches = 524288" > /etc/sysctl.d/60-inotify.conf
 sysctl -p --system
 
-# install Docker
+# install latest Docker
 curl -sL https://get.docker.io/ | sh
 
-# install docker compose
-curl -L https://github.com/docker/compose/releases/download/1.11.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+# install latest docker-compose
+curl -L "$(curl -s https://api.github.com/repos/docker/compose/releases | grep browser_download_url | head -n 4 | grep Linux | cut -d '"' -f 4)" > /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
 # configure docker group (docker commands can be launched without sudo)
