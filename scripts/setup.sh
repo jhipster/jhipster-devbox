@@ -18,15 +18,7 @@ dpkg-reconfigure locales
 apt-get -y install vim git zip bzip2 fontconfig curl language-pack-en
 
 # install Java 8
-echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main' >> /etc/apt/sources.list
-echo 'deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main' >> /etc/apt/sources.list
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C2518248EEA14886
-
-apt-get update
-
-echo oracle-java-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
-apt-get install -y --force-yes oracle-java8-installer
-update-java-alternatives -s java-8-oracle
+apt-get install default-jdk
 
 # install node.js
 curl -sL https://deb.nodesource.com/setup_6.x | bash -
