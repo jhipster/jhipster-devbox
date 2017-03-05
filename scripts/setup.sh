@@ -5,8 +5,7 @@ apt-get update
 apt-get upgrade
 
 ################################################################################
-# This is a port of the JHipster Dockerfile,
-# see https://github.com/jhipster/jhipster-docker/
+# Install the mandatory tools
 ################################################################################
 
 export LANGUAGE='en_US.UTF-8'
@@ -38,15 +37,16 @@ npm install -g npm
 
 # install yarn
 npm install -g yarn
+su -c "yarn config set prefix /home/vagrant/.yarn-global" vagrant
 
 # install yeoman grunt bower gulp
-yarn global add yo bower gulp
+su -c "yarn global add yo bower gulp" vagrant
 
 # install JHipster
-yarn global add generator-jhipster@4.0.7
+su -c "yarn global add generator-jhipster@4.0.7" vagrant
 
 # install JHipster UML
-yarn global add jhipster-uml@2.0.3
+su -c "yarn global add jhipster-uml@2.0.3" vagrant
 
 ################################################################################
 # Install the graphical environment
@@ -110,7 +110,7 @@ ln -s /opt/cf /usr/bin/cf
 
 # install the AWS tools
 pip install awscli
-yarn global add aws-sdk progress node-uuid
+su -c "yarn global add aws-sdk progress node-uuid" vagrant
 
 #install Guake
 apt-get install -y guake
@@ -128,6 +128,7 @@ echo 'SHELL=/bin/zsh' >> /etc/environment
 # install jhipster-oh-my-zsh-plugin
 git clone https://github.com/jhipster/jhipster-oh-my-zsh-plugin.git /home/vagrant/.oh-my-zsh/custom/plugins/jhipster
 sed -i -e "s/plugins=(git)/plugins=(git docker docker-compose jhipster)/g" /home/vagrant/.zshrc
+echo 'export PATH="$PATH:/usr/bin:/home/vagrant/.yarn-global/bin:/home/vagrant/.yarn/bin:/home/vagrant/.config/yarn/global/node_modules/.bin"' >> /home/vagrant/.zshrc
 
 # change user to vagrant
 chown -R vagrant:vagrant /home/vagrant/.zshrc /home/vagrant/.oh-my-zsh
@@ -167,14 +168,14 @@ sysctl -p --system
 curl -sL https://get.docker.io/ | sh
 
 # install docker compose
-curl -L https://github.com/docker/compose/releases/download/1.10.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+curl -L https://github.com/docker/compose/releases/download/1.11.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
 # configure docker group (docker commands can be launched without sudo)
 usermod -aG docker vagrant
 
-# fix ownership of yarn cache
-chown -R vagrant:vagrant /home/vagrant/.yarn-cache
+# fix ownership of home
+chown -R vagrant:vagrant /home/vagrant/
 
 # clean the box
 apt-get -y autoclean
