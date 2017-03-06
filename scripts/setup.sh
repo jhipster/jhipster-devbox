@@ -20,12 +20,9 @@ apt-get -y install vim git zip bzip2 fontconfig curl language-pack-en
 # install Java 8
 apt-get install default-jdk
 
-# install node.js and yarn
+# install node.js
 curl -sL https://deb.nodesource.com/setup_6.x | bash -
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-apt-get update
-apt-get install -y nodejs yarn unzip python g++ build-essential
+apt-get install -y nodejs unzip python g++ build-essential
 
 # update npm
 npm install -g npm
