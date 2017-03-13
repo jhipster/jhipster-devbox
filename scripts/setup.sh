@@ -86,27 +86,16 @@ apt-get install -y mysql-workbench
 # install PgAdmin
 apt-get install -y pgadmin3
 
-# install cqlsh
-apt-get install -y python-pip
-pip install cqlsh
-
-# install mongo client
-apt-get install -y mongodb-clients
-
 # install Heroku toolbelt
 wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
-# install Cloud Foundry client
-cd /opt && curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&source=github" | tar -zx
-ln -s /opt/cf /usr/bin/cf
-
-# install the AWS tools
-pip install awscli
-su -c "yarn global add aws-sdk progress node-uuid" vagrant
-
-#install Guake
+# install Guake
 apt-get install -y guake
 cp /usr/share/applications/guake.desktop /etc/xdg/autostart/
+
+# install jhipster-devbox
+git clone git://github.com/jhipster/jhipster-devbox.git /home/vagrant/jhipster-devbox
+chmod +x /home/vagrant/jhipster-devbox/tools/*.sh
 
 # install zsh
 apt-get install -y zsh
@@ -133,21 +122,6 @@ sed -i -e 's/visual-studio-code\/code/visual-studio-code\/bin\/code/' /home/vagr
 
 # disable GPU (see https://code.visualstudio.com/docs/supporting/faq#_vs-code-main-window-is-blank)
 sed -i -e 's/"$CLI" "$@"/"$CLI" "--disable-gpu" "$@"/' /home/vagrant/.local/share/umake/ide/visual-studio-code/bin/code
-
-# install useful extensions
-ln -sf /home/vagrant/.local/share/umake/ide/visual-studio-code/bin/code /usr/local/bin/code
-su -c 'code --install-extension redhat.java' vagrant
-su -c 'code --install-extension johnpapa.Angular1' vagrant
-su -c 'code --install-extension johnpapa.Angular2' vagrant
-su -c 'code --install-extension msjsdiag.debugger-for-chrome' vagrant
-su -c 'code --install-extension dbaeumer.vscode-eslint' vagrant
-su -c 'code --install-extension EditorConfig.EditorConfig' vagrant
-su -c 'code --install-extension PeterJausovec.vscode-docker' vagrant
-su -c 'code --install-extension abusaidm.html-snippets' vagrant
-su -c 'code --install-extension xabikos.JavaScriptSnippets' vagrant
-su -c 'code --install-extension christian-kohler.npm-intellisense' vagrant #intelligent js imports
-su -c 'code --install-extension alefragnani.project-manager' vagrant #manage several vscode windows
-su -c 'code --install-extension cbornet.jdl' vagrant #jhipster-ide JDL support
 
 #install IDEA community edition
 su -c 'umake ide idea /home/vagrant/.local/share/umake/ide/idea' vagrant
