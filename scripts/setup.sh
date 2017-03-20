@@ -35,7 +35,7 @@ su -c "yarn config set prefix /home/vagrant/.yarn-global" vagrant
 su -c "yarn global add yo bower gulp" vagrant
 
 # install JHipster
-su -c "yarn global add generator-jhipster@4.0.8" vagrant
+su -c "yarn global add generator-jhipster@4.1.0" vagrant
 
 # install JHipster UML
 su -c "yarn global add jhipster-uml@2.0.3" vagrant
