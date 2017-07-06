@@ -39,7 +39,7 @@ The "Quick installation" provides a pre-build Virtual Machine, and the "Manual i
 
 ### Quick installation
 
-Pre-built distributions of this "development box" are available on [Atlas](https://atlas.hashicorp.com/jhipster).
+Pre-built distributions of this "development box" are available on [Vagrant Cloud](https://app.vagrantup.com/jhipster/boxes/jhipster-devbox).
 
 To install the latest distribution, please run:
 
