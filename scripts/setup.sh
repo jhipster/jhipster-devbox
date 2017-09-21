@@ -18,7 +18,7 @@ dpkg-reconfigure locales
 apt-get -y install vim git zip bzip2 fontconfig curl language-pack-en
 
 # install Java 8
-apt-get install default-jdk
+apt-get install openjdk-8-jdk
 
 # install node.js
 curl -sL https://deb.nodesource.com/setup_6.x | bash -
