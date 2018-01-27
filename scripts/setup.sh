@@ -69,13 +69,7 @@ sed -i -e 's/xubuntu-wallpaper.png/jhipster-wallpaper.png/' /etc/xdg/xdg-xubuntu
 ################################################################################
 
 # install Ubuntu Make - see https://wiki.ubuntu.com/ubuntu-make
-
-add-apt-repository -y ppa:ubuntu-desktop/ubuntu-make
-
-apt-get update
-apt-get upgrade
-
-apt install -y ubuntu-make
+apt-get install -y ubuntu-make
 
 # install Chromium Browser
 apt-get install -y chromium-browser
@@ -134,7 +128,7 @@ sysctl -p --system
 curl -sL https://get.docker.io/ | sh
 
 # install latest docker-compose
-curl -L "$(curl -s https://api.github.com/repos/docker/compose/releases | grep browser_download_url | head -n 4 | grep Linux | cut -d '"' -f 4)" > /usr/local/bin/docker-compose
+curl -L "$(curl -s https://api.github.com/repos/docker/compose/releases | grep browser_download_url | head -n 4 | grep Linux | grep -v sha256 | cut -d '"' -f 4)" > /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
 # configure docker group (docker commands can be launched without sudo)
