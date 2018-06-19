@@ -32,7 +32,7 @@ npm install -g yarn
 su -c "yarn config set prefix /home/vagrant/.yarn-global" vagrant
 
 # install yeoman grunt bower gulp
-su -c "yarn global add yo bower gulp" vagrant
+su -c "yarn global add yo" vagrant
 
 # install JHipster
 su -c "yarn global add generator-jhipster@4.14.4" vagrant
