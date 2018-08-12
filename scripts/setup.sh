@@ -117,8 +117,8 @@ sed -i -e 's/visual-studio-code\/code/visual-studio-code\/bin\/code/' /home/vagr
 # disable GPU (see https://code.visualstudio.com/docs/supporting/faq#_vs-code-main-window-is-blank)
 sed -i -e 's/"$CLI" "$@"/"$CLI" "--disable-gpu" "$@"/' /home/vagrant/.local/share/umake/ide/visual-studio-code/bin/code
 
-#install IDEA community edition
-su -c 'umake ide idea /home/vagrant/.local/share/umake/ide/idea' vagrant
+#install IDEA ultimate edition
+su -c 'umake ide idea-ultimate /home/vagrant/.local/share/umake/ide/idea' vagrant
 
 # increase Inotify limit (see https://confluence.jetbrains.com/display/IDEADEV/Inotify+Watches+Limit)
 echo "fs.inotify.max_user_watches = 524288" > /etc/sysctl.d/60-inotify.conf
