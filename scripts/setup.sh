@@ -8,12 +8,6 @@
 # Install the mandatory tools
 ################################################################################
 
-export LANGUAGE='en_US.UTF-8'
-export LANG='en_US.UTF-8'
-export LC_ALL='en_US.UTF-8'
-locale-gen en_US.UTF-8
-dpkg-reconfigure locales
-
 # install utilities
 apt-get -y install vim git zip bzip2 fontconfig curl language-pack-en
 
