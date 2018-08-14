@@ -1,10 +1,8 @@
 #!/bin/sh
 
 # update the system
-apt-mark hold keyboard-configuration
-apt-get update
-apt-get -y upgrade
-apt-mark unhold keyboard-configuration
+# apt-get update
+# apt-get -y upgrade
 
 ################################################################################
 # Install the mandatory tools
