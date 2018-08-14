@@ -22,18 +22,18 @@ apt-get -y install vim git zip bzip2 fontconfig curl language-pack-en
 # install Java 8
 apt-get install openjdk-8-jdk
 
-# install node.js
+# install Node.js
 curl -sL https://deb.nodesource.com/setup_8.x | bash -
 apt-get install -y nodejs unzip python g++ build-essential
 
-# update npm
+# update NPM
 npm install -g npm
 
-# install yarn
+# install Yarn
 npm install -g yarn
 su -c "yarn config set prefix /home/vagrant/.yarn-global" vagrant
 
-# install yeoman grunt bower gulp
+# install Yeoman
 su -c "yarn global add yo" vagrant
 
 # install JHipster
