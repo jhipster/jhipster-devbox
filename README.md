@@ -91,7 +91,7 @@ Start up the new box:
   - Chromium, which is the Open-Source version of Google Chrome, is also installed
 - Other available tools
   - [Guake](http://guake-project.org/) is installed, hit "F12" to have your terminal
-  - The [Atom](https://atom.io/) text editor is installed
+  - The [Visual Studio Code](https://code.visualstudio.com/) code editor is installed
 - Generate your application
   - Run `yo jhipster` and use JHipster normally
 - Configure your database
