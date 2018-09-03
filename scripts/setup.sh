@@ -26,13 +26,13 @@ npm install -g yarn
 su -c "yarn config set prefix /home/vagrant/.yarn-global" vagrant
 
 # install Yeoman
-su -c "yarn global add yo" vagrant
+npm install -g yo
 
 # install JHipster
-su -c "yarn global add generator-jhipster@5.2.1" vagrant
+npm install -g generator-jhipster@5.2.1
 
 # install JHipster UML
-su -c "yarn global add jhipster-uml@2.0.3" vagrant
+npm install -g jhipster-uml@2.0.3
 
 ################################################################################
 # Install the graphical environment
