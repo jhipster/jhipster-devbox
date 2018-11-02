@@ -15,8 +15,8 @@ apt-get -y install vim git zip bzip2 fontconfig curl language-pack-en
 apt-get install openjdk-8-jdk
 
 # install Node.js
-curl -sL https://deb.nodesource.com/setup_10.x | bash -
-apt-get install -y nodejs unzip python g++ build-essential
+wget https://nodejs.org/dist/v10.13.0/node-v10.13.0-linux-x64.tar.gz -O /tmp/node.tar.gz
+tar -C /usr/local --strip-components 1 -xzf /tmp/node.tar.gz
 
 # update NPM
 npm install -g npm
