@@ -1,8 +1,11 @@
 #!/bin/sh
 
 # update the system
-# apt-get update
-# apt-get -y upgrade
+export DEBIAN_FRONTEND=noninteractive
+apt-mark hold keyboard-configuration
+apt-get update
+apt-get -y upgrade
+apt-mark unhold keyboard-configuration
 
 ################################################################################
 # Install the mandatory tools
