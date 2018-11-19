@@ -13,4 +13,4 @@ code --install-extension abusaidm.html-snippets
 code --install-extension xabikos.JavaScriptSnippets
 code --install-extension christian-kohler.npm-intellisense #intelligent js imports
 code --install-extension alefragnani.project-manager #manage several vscode windows
-code --install-extension cbornet.jdl #jhipster-ide JDL support
+code --install-extension jhipster-ide.jdl #jhipster-ide JDL support
