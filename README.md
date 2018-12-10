@@ -15,12 +15,12 @@ The JHipster "development box" is a complete development environment for JHipste
 
 It requires to have [Vagrant](https://www.vagrantup.com/) installed on your machine.
 
-It is fully based on Open Source software, most importantly:
+It is fully based on Open Source software, and most importantly on:
 
 - Ubuntu
 - OpenJDK (Oracle JDK can't be used because of license issues)
-- Yarn, NPM, Bower and Gulp
-- Docker and Docker Compose (see the [JHipster Docker Compose documentation](http://jhipster.github.io/docker-compose/) to learn how to run your application, database or even a full micro-service architecture with Docker)
+- Node, NPM and Yarn
+- Docker and Docker Compose (see the [JHipster Docker Compose documentation](https://www.jhipster.tech/docker-compose/) to learn how to run your application, database or even a full micro-service architecture with Docker)
 - [Ubuntu Make](https://wiki.ubuntu.com/ubuntu-make) so you can easily install your favorite IDE (type `umake ide idea` for Intellij IDEA or `umake ide eclipse` for Eclipse)
 - Chromium and Firefox Web browsers
 
