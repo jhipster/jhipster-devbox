@@ -32,7 +32,7 @@ su -c "yarn config set prefix /home/vagrant/.yarn-global" vagrant
 npm install -g yo
 
 # install JHipster
-npm install -g generator-jhipster@5.8.0
+npm install -g generator-jhipster@5.8.1
 
 # install JHipster UML
 npm install -g jhipster-uml@2.0.3
