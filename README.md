@@ -1,5 +1,13 @@
 # JHipster official "development box"
 
+## DEPRECATION NOTICE
+
+The JHipster "development box" has worked very well, and has been used by a lot of people over the years, but it is based on another Vagrant image called "bento/ubuntu-18.04" which is currently broken for our needs.
+
+As a result, the maintenance burden on the JHipster "development box" is just too big for the current JHipster team, and we are not going to do more releases, as soon as JHipster 6 is released.
+
+If you are interested in contributing, and want to make this project alive again, please feel free to contact us, we'll be extremely happy to have a new contributor in charge of this project.
+
 ## Introduction
 
 This is a [Vagrant](https://www.vagrantup.com/) configuration to set up a complete, virtualized development environment for JHipster users.
