@@ -14,8 +14,8 @@ apt-mark unhold keyboard-configuration
 # install utilities
 apt-get -y install vim git zip bzip2 fontconfig curl language-pack-en
 
-# install Java 8
-apt-get install openjdk-8-jdk
+# install Java 11
+apt-get -y install openjdk-11-jdk
 
 # install Node.js
 wget https://nodejs.org/dist/v10.15.3/node-v10.15.3-linux-x64.tar.gz -O /tmp/node.tar.gz
@@ -32,7 +32,7 @@ su -c "yarn config set prefix /home/vagrant/.yarn-global" vagrant
 npm install -g yo
 
 # install JHipster
-npm install -g generator-jhipster@5.8.2
+npm install -g generator-jhipster@6.0.0
 
 # install JHipster UML
 npm install -g jhipster-uml@2.0.3
