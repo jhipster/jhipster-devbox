@@ -1,3 +1,5 @@
+# JHipster official "development box"
+
 ## Introduction
 
 This is a [Vagrant](https://www.vagrantup.com/) configuration to set up a complete, virtualized development environment for JHipster users.
