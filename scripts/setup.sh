@@ -18,7 +18,7 @@ apt-get -y install vim git zip bzip2 fontconfig curl language-pack-en
 apt-get -y install openjdk-11-jdk
 
 # install Node.js
-wget https://nodejs.org/dist/v16.13.2/node-v16.13.2-linux-x64.tar.gz -O /tmp/node.tar.gz
+wget https://nodejs.org/dist/v16.14.0/node-v16.14.0-linux-x64.tar.gz -O /tmp/node.tar.gz
 tar -C /usr/local --strip-components 1 -xzf /tmp/node.tar.gz
 
 # update NPM
@@ -32,7 +32,7 @@ su -c "yarn config set prefix /home/vagrant/.yarn-global" vagrant
 npm install -g yo
 
 # install JHipster
-npm install -g generator-jhipster@7.6.0
+npm install -g generator-jhipster@7.7.0
 
 # install JHipster UML
 npm install -g jhipster-uml@2.0.3
